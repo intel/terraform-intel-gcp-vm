@@ -8,11 +8,11 @@
 
 © Copyright 2022, Intel Corporation
 
-## Module name
+## Intel Cloud Optimization Module for GCP VM creation 
 
 ## Usage
 
-See examples folder for code ./examples/intel-optimized-postgresql-server/main.tf
+See examples folder for code ./examples/intel-gcp-vm/main.tf
 
 Example of main.tf
 
