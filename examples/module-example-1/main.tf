@@ -4,8 +4,8 @@ provider "google" {
   region  = "us-central1"
 }
 
-resource "google_compute_instance" "example" {
-  name         = "my-vm"
+resource "google_compute_instance" "josh-hashitest" {
+  name         = "josh-hashitest"
   machine_type = "f1-micro"
   zone         = "us-central1-a"
 
