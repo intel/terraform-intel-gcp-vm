@@ -6,7 +6,7 @@ provider "google" {
 
 resource "google_compute_instance" "josh-hashitest" {
   name         = "josh-hashitest"
-  machine_type = "f1-micro"
+  machine_type = "n2-standard-2"
   zone         = "us-central1-a"
 
   boot_disk {
