@@ -1,5 +1,5 @@
 provider "google" {
-  version = "3.55.0"
+  version = "4.49.0"
   project = "intel-csa-resource-gcp"
   region  = "us-central1"
 }
