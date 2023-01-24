@@ -12,11 +12,11 @@ This file documents the HashiCorp Sentinel policies that apply to this module
 
 ## Policy 1
 
-Description: The configured "instance_type" should be an Intel Xeon 3rd Generation(code-named Ice Lake) Scalable processors
+Description: The configured "machine_type" should be an Intel Xeon 3rd Generation(code-named Ice Lake) Scalable processors
 
-Resource type: aws_instance(need to update w/ GCP )
+Resource type: machine_type
 
-Parameter: instance_type
+Parameter: machine_type
 
 Allowed Types
 - **General Purpose:**  N2-Standard:  n2-standard-2, n2-standard-4, n2-standard-8, n2-standard-16, n2-standard-32, n2-standard-64, n2-standard-80, n2-standard-96, n2-standard-128
