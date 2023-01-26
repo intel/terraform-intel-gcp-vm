@@ -1,4 +1,4 @@
 provider "google" {
-  project = "intel-csa-resource-gcp"
+  project = "var.project"
   region  = "us-central1"
 }

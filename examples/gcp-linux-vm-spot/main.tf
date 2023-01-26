@@ -1,6 +1,6 @@
 resource "google_compute_instance" "my_spot_instance" {
   name         = "my-spot-instance"
-  machine_type = "n1-standard-1"
+  machine_type = "n2-standard-2"
   zone         = "us-central1-a"
 
   scheduling {
@@ -19,4 +19,3 @@ resource "google_compute_instance" "my_spot_instance" {
       image = "ubuntu-os-cloud/ubuntu-1804-lts"
     }
   }
-}
