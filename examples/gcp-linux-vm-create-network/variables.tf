@@ -1,7 +1,10 @@
 ########################
 ####     Intel      ####
 ########################
-
+variable "project" {
+  description = "Project id in GCP"
+  type = string
+}
 ########################
 ####    Required    ####
 ########################
