@@ -1,14 +1,10 @@
 
 output "ip_address" {
-  value = google_compute_instance.example.network_interface.0.access_config.0.nat_ip
+  value = google_compute_instance.example.network_interface
 }
 
 output "instance_name" {
     value = google_compute_instance.example.hostname
-}
-
-output "boot_disk" {
-    value = google_compute_instance.example.boot_disk
 }
 
 output "tags" {
