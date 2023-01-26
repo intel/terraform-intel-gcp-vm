@@ -17,7 +17,7 @@ resource "google_compute_instance" "my_instance" {
   zone         = "us-central1-a"
 
   network_interface {
-    network = google_compute_network.my_network.name
+    network    = google_compute_network.my_network.name
     subnetwork = google_compute_subnetwork.my_subnetwork.name
     access_config {
       // Ephemeral IP

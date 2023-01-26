@@ -3,7 +3,7 @@
 ########################
 variable "project" {
   description = "Project id in GCP"
-  type = string
+  type        = string
 }
 ########################
 ####    Required    ####
