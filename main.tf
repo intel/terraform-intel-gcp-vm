@@ -1,5 +1,5 @@
-resource "google_compute_instance" "josh-hashitest" {
-  name         = "josh-hashitestmain"
+resource "google_compute_instance" "example" {
+  name         = "vm-example"
   machine_type = "n2-standard-2"
   min_cpu_platform = "Intel Ice Lake"
   zone         = "us-central1-a"

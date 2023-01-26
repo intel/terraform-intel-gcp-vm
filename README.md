@@ -8,23 +8,17 @@
 
 © Copyright 2022, Intel Corporation
 
-## Module name
+## Intel GCP VM Module
 
 ## Usage
 
-See examples folder for code ./examples/intel-optimized-postgresql-server/main.tf
+See examples folder for code ./examples/intel-gcp-vm/main.tf
 
 Example of main.tf
 
 ```hcl
-# Example of how to pass variable for database password:
-# terraform apply -var="db_password=..."
-# Environment variables can also be used https://www.terraform.io/language/values/variables#environment-variables
 
-# Provision Intel Cloud Optimization Module
-module "module-example" {
-  source = "github.com/intel/module-name"
-}
+
 
 ```
 
