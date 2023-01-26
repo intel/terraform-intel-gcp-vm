@@ -24,10 +24,6 @@ variable "machine_type" {
   default     = "n2-standard-2"
 }
 
-variable "project" {
-  description = "Project id in GCP"
-  type = string
-}
 ########################
 ####     Other      ####
 ########################

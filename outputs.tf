@@ -26,3 +26,4 @@ output "guest_accelerator" {
 output "attached_disk" {
     value = google_compute_instance.example.attached_disk
 }
+
