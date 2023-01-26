@@ -6,9 +6,9 @@
 
 © Copyright 2022, Intel Corporation
 
-## Add Module Name Here
+## Intel GCP VM with network creation
 
-Add Module description here
+This module creates a new network on GCP, then creates a VM that is in that specific network. 
 
 ## Usage
 
