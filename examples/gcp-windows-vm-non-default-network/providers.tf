@@ -1,3 +1,3 @@
 provider "google" {
-  region  = "us-central1"
+  # Configuration options
 }

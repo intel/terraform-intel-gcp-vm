@@ -1,4 +1,3 @@
 provider "google" {
-  project = "var.project"
-  region  = "us-central1"
+  # Configuration options
 }
