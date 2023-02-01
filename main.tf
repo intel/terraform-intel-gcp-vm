@@ -1,10 +1,10 @@
 data "google_compute_image" "image" {
   family = var.boot_image_family
-  project = var.image_project
+  project = var.boot_image_project
 }
 
 resource "google_compute_instance" "test-vm-instance" {
-  
+
   # General options
   name         = var.name
   description  = var.description
@@ -12,7 +12,7 @@ resource "google_compute_instance" "test-vm-instance" {
   tags         = var.tags
   hostname     = var.hostname
   desired_status = var.desired_status
-  project      = var.project
+  project      = var.project != null ? var.project : null
   #TODO evaluate DNS configuration if required
 
 
@@ -26,6 +26,16 @@ resource "google_compute_instance" "test-vm-instance" {
       email = lookup(service_account.value, "service_email", null)
       scopes = lookup(service_account.value, "scopes", null)
     }
+  }
+
+  # Networking
+  network_interface {
+    network = var.network
+    subnetwork = var.subnetwork
+    subnetwork_project = var.subnetwork_project
+    network_ip = var.network_ip
+    nic_type = var.nic_type
+    stack_type = var.stack_type
   }
 
   # CPU platform and GPU options
@@ -73,18 +83,11 @@ resource "google_compute_instance" "test-vm-instance" {
 
   # Advanced options
   # Advanced networking options
-  network_interface {
-    network = "default"
-
-    access_config {
-      // Ephemeral public IP
-    }
-  }
 
   # Advanced disks options
 
   # Advanced management options
 
   # Advanced sole tenancy options
-  
+
 }

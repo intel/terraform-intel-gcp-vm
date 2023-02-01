@@ -1,7 +1,7 @@
 ########################
 ####     Intel      ####
 ########################
-# See policies.md, Intel recommends the 3rd Generation Intel® Xeon® Platinum (Ice Lake) based instances. 
+# See policies.md, Intel recommends the 3rd Generation Intel® Xeon® Platinum (Ice Lake) based instances.
 #N2-Standard:  n2-standard-2, n2-standard-4, n2-standard-8, n2-standard-16, n2-standard-32, n2-standard-64, n2-standard-80, n2-standard-96, n2-standard-128
 #N2-HighMemory: n2-highmem-2, n2-highmem-4, n2-highmem-8, n2-highmem-16, n2-highmem-32, n2-highmem-48, n2-highmem-64, n2-highmem-80, n2-highmem-96, n2-highmem-128
 #N2-HighCpu: n2-highcpu-2, n2-highcpu-4, n2-highcpu-8, n2-highcpu-16, n2-highcpu-32, n2-highcpu-48, n2-highcpu-64, n2-highcpu-80, n2-highcpu-96
@@ -44,22 +44,56 @@ variable "desired_status" {
 #   description = "Networks to attach to the instance"
 # }
 
+variable "network" {
+  type = string
+  description = "The name or self_link of the network to attach this interface to."
+  default = "default"
+}
+
+variable "network_ip" {
+  type = string
+  description = "The private IP address to assign to the instance. If empty, the address will be automatically assigned."
+  default = ""
+}
+
+variable "nic_type" {
+  type = string
+  description = "The type of vNIC to be used on this compute instance."
+  default = null
+}
+
+variable "stack_type" {
+  type = string
+  description = "he stack type for this network interface to identify whether the IPv6 feature is enabled or not."
+  default = "IPV4_ONLY"
+}
+
+variable "subnetwork" {
+  type = string
+  description = "The name or self_link of the subnetwork to attach this interface to. Either network or subnetwork must be provided. "
+  default = null
+}
+
+variable "subnetwork_project" {
+  type = string
+  description = "The project in which the subnetwork belongs. If the subnetwork is a name and this field is not provided, the provider project is used."
+  default = null
+}
+
+
+
 #TODO Check for default value when provisioning instance
 variable "stop_for_update" {
   type        = bool
   description = "If true, allows Terraform to stop the instance to update its properties."
   default     = null
 }
-variable "image_project" {
-  type        = string
-  description = "The ID of the project in which the source image resides."
-  default     = "ubuntu-os-cloud"
-}
+
 
 variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
-  default     = null
+  default     = ""
 }
 
 variable "service_account_email" {
@@ -84,6 +118,10 @@ variable "service_account" {
   description = "Service account and scopes that will be associated with the GCE instance."
 }
 
+############################
+####     Boot Disk      ####
+############################
+
 variable "boot_image_family" {
   type = string
   description = "The image from which to initialize this disk"
@@ -100,6 +138,12 @@ variable "boot_disk_type" {
   type = string
   description = "Disk type associated with the OS disk"
   default = "pd-ssd"
+}
+
+variable "boot_image_project" {
+  type        = string
+  description = "The ID of the project in which the source image resides."
+  default     = "ubuntu-os-cloud"
 }
 
 ########################
