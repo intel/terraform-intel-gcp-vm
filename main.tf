@@ -1,3 +1,7 @@
+locals {
+
+}
+
 data "google_compute_image" "image" {
   family  = var.boot_image_family
   project = var.boot_image_project
@@ -13,12 +17,13 @@ resource "google_compute_instance" "test-vm-instance" {
   hostname       = var.hostname
   desired_status = var.desired_status
   project        = var.project != null ? var.project : null
+
   #TODO evaluate DNS configuration if required
 
 
   # Machine configuration options
   machine_type              = var.machine_type
-  allow_stopping_for_update = var.stop_for_update
+  allow_stopping_for_update = var.allow_stopping_for_update
 
   dynamic "service_account" {
     for_each = var.service_account == null ? [] : [var.service_account]
@@ -29,6 +34,7 @@ resource "google_compute_instance" "test-vm-instance" {
   }
 
   # Networking
+  can_ip_forward = var.can_ip_forward
   network_interface {
     network            = var.network
     subnetwork         = var.subnetwork
@@ -42,7 +48,14 @@ resource "google_compute_instance" "test-vm-instance" {
   min_cpu_platform = var.min_cpu_platform
   # Display device options
 
+  # Guest Acceleration
+  # TODO: Guest acceleration has been postponed until it is supported on Ice Lake. Currently supported on Cascade Lake. See issues for updates
+
   # Container options
+
+  # Security
+
+  #TODO: confidential_instance_config block only applies to AMD so the block has been omitted
 
   # Boot disk options
   deletion_protection = var.deletion_protection
@@ -56,6 +69,12 @@ resource "google_compute_instance" "test-vm-instance" {
       #   my_label = "value"
       # }
     }
+  }
+
+  scheduling {
+    preemptible         = var.preemptible
+    automatic_restart   = var.preemptible ? false : var.automatic_restart
+    on_host_maintenance = var.preemptible ? false : var.on_host_maintenance
   }
 
   # variable "additional_networks" {

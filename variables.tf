@@ -80,16 +80,6 @@ variable "subnetwork_project" {
   default     = null
 }
 
-
-
-#TODO Check for default value when provisioning instance
-variable "stop_for_update" {
-  type        = bool
-  description = "If true, allows Terraform to stop the instance to update its properties."
-  default     = null
-}
-
-
 variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
@@ -162,10 +152,17 @@ variable "zone" {
   default     = null
 }
 
+variable "can_ip_forward" {
+  type        = bool
+  description = "Conditional that allows sending and receiving of packets with non-matching source or destination IPs."
+  default     = false
+}
+
+#TODO get feedback on what we want for this setting
 variable "allow_stopping_for_update" {
   type        = bool
   description = "If true, allows Terraform to stop the instance to update its properties"
-  default     = true
+  default     = null
 }
 
 variable "tags" {
@@ -292,34 +289,29 @@ variable "hostname" {
 
 
 
+###
+#TODO get feedback on this value
+variable "preemptible" {
+  type        = bool
+  description = "Specifies if the instance is preemptible. If this field is set to true, then automatic_restart must be set to false."
+  default     = false
+}
 
+variable "automatic_restart" {
+  type        = bool
+  description = "Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user)."
+  default     = true
+}
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
+variable "on_host_maintenance" {
+  type        = string
+  description = "Describes maintenance behavior for the instance. Can be MIGRATE or TERMINATE"
+  validation {
+    condition     = contains(["MIGRATE", "TERMINATE"], var.on_host_maintenance)
+    error_message = "on_host_maintenance must have a value of \"MIGRATE\" or \"TERMINATE\"."
+  }
+  default = "MIGRATE"
+}
 
 
 
