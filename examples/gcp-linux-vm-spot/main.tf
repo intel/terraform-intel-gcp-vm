@@ -1,8 +1,8 @@
 module "spot-vm" {
-  source = "../../"
+  source            = "../../"
   boot_image_family = "ubuntu-2004-lts"
-  name = "awesome-vm"
-  network = "default"
+  name              = "awesome-vm"
+  network           = "default"
   # nic_type = "GVNIC"
 
 }

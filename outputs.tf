@@ -28,28 +28,28 @@
 # }
 
 output "disk_type" {
-  value = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
+  value       = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
   description = "Disk type that was configured when the VM was created."
 }
 
 output "disk_size" {
-  value = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
+  value       = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
   description = "Disk type that was configured when the VM was created."
 }
 
 
 output "name" {
-  value = google_compute_instance.test-vm-instance.name
+  value       = google_compute_instance.test-vm-instance.name
   description = "Name of the VM that has been created."
 }
 
 output "hostname" {
-  value = google_compute_instance.test-vm-instance.hostname
+  value       = google_compute_instance.test-vm-instance.hostname
   description = "Name of the VM that has been created."
 }
 
 output "machine_type" {
-  value = google_compute_instance.test-vm-instance.machine_type
+  value       = google_compute_instance.test-vm-instance.machine_type
   description = "Instance type that was used for the VM deployment."
 }
 

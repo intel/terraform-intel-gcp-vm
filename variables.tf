@@ -16,7 +16,7 @@
 variable "min_cpu_platform" {
   type        = string
   description = "Specifies a minimum CPU platform for the VM instance"
-  default = "Intel Ice Lake"
+  default     = "Intel Ice Lake"
 }
 
 ########################
@@ -25,7 +25,7 @@ variable "min_cpu_platform" {
 variable "boot_disk" {
   type        = map(any)
   description = "The boot disk for the instance"
-  default = {}
+  default     = {}
 }
 
 variable "name" {
@@ -34,9 +34,9 @@ variable "name" {
 }
 
 variable "desired_status" {
-  type = string
+  type        = string
   description = "Desired status of the instance."
-  default = "RUNNING"
+  default     = "RUNNING"
 }
 
 # variable "network_interface" {
@@ -45,39 +45,39 @@ variable "desired_status" {
 # }
 
 variable "network" {
-  type = string
+  type        = string
   description = "The name or self_link of the network to attach this interface to."
-  default = "default"
+  default     = "default"
 }
 
 variable "network_ip" {
-  type = string
+  type        = string
   description = "The private IP address to assign to the instance. If empty, the address will be automatically assigned."
-  default = ""
+  default     = ""
 }
 
 variable "nic_type" {
-  type = string
+  type        = string
   description = "The type of vNIC to be used on this compute instance."
-  default = null
+  default     = null
 }
 
 variable "stack_type" {
-  type = string
+  type        = string
   description = "he stack type for this network interface to identify whether the IPv6 feature is enabled or not."
-  default = "IPV4_ONLY"
+  default     = "IPV4_ONLY"
 }
 
 variable "subnetwork" {
-  type = string
+  type        = string
   description = "The name or self_link of the subnetwork to attach this interface to. Either network or subnetwork must be provided. "
-  default = null
+  default     = null
 }
 
 variable "subnetwork_project" {
-  type = string
+  type        = string
   description = "The project in which the subnetwork belongs. If the subnetwork is a name and this field is not provided, the provider project is used."
-  default = null
+  default     = null
 }
 
 
@@ -97,21 +97,21 @@ variable "project" {
 }
 
 variable "service_account_email" {
-  type = string
+  type        = string
   description = "Service account to attach to the instance"
-  default = ""
+  default     = ""
 }
 
 variable "service_account_scopes" {
-  type = list(string)
+  type        = list(string)
   description = "Service account to attach to the instance"
-  default = []
+  default     = []
 }
 
 variable "service_account" {
   type = object({
     service_email = optional(string, null)
-    scopes = optional(set(string), [])
+    scopes        = optional(set(string), [])
   })
   default = {
   }
@@ -123,21 +123,21 @@ variable "service_account" {
 ############################
 
 variable "boot_image_family" {
-  type = string
+  type        = string
   description = "The image from which to initialize this disk"
-  default = "debian-10"
+  default     = "debian-10"
 }
 
 variable "boot_disk_size" {
-  type = number
+  type        = number
   description = "Size of the OS disk"
-  default = 100
+  default     = 100
 }
 
 variable "boot_disk_type" {
-  type = string
+  type        = string
   description = "Disk type associated with the OS disk"
-  default = "pd-ssd"
+  default     = "pd-ssd"
 }
 
 variable "boot_image_project" {
@@ -165,13 +165,13 @@ variable "zone" {
 variable "allow_stopping_for_update" {
   type        = bool
   description = "If true, allows Terraform to stop the instance to update its properties"
-  default = true
+  default     = true
 }
 
 variable "tags" {
   type        = list(string)
   description = "A list of network tags to attach to the instance"
-  default = []
+  default     = []
 }
 
 # variable "attached_disk" {
@@ -201,7 +201,7 @@ variable "deletion_protection" {
 variable "hostname" {
   type        = string
   description = "A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid"
-  default = null
+  default     = null
 }
 
 # variable "guest_accelerator" {
