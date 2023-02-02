@@ -49,7 +49,7 @@ resource "google_compute_instance" "test-vm-instance" {
     }
 
     dynamic "ipv6_access_config" {
-      for_each = var.ipv6_access_config == null ? [] : [var.ipv6_access_config]
+      for_each = var.ipv6_access_config != [] ? var.ipv6_access_config : []
       content {
         public_ptr_domain_name = lookup(ipv6_access_config.value, "public_ptr_domain_name", null)
         network_tier = lookup(ipv6_access_config.value, "network_tier", null)

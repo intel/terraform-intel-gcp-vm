@@ -292,7 +292,6 @@ variable "provisioning_model" {
   default     = "STANDARD"
 }
 
-
 variable "on_host_maintenance" {
   type        = string
   description = "Describes maintenance behavior for the instance. Can be MIGRATE or TERMINATE"
@@ -302,8 +301,6 @@ variable "on_host_maintenance" {
   }
   default = "MIGRATE"
 }
-
-
 
 variable "access_config" {
   type = map(object({
@@ -316,14 +313,13 @@ variable "access_config" {
 }
 
 variable "ipv6_access_config" {
-  type = object({
+  type = list(object({
     public_ptr_domain_name = optional(string, null)
-    network_tier        = optional(string, "PREMIUM")
-  })
-  default = {}
+    network_tier        = optional(string, null)
+  }))
+  default = []
   description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
-
 
 variable "enable_nested_virtualization" {
   type        = bool
@@ -331,14 +327,17 @@ variable "enable_nested_virtualization" {
   default     = false
 }
 
-
 variable "termination_action" {
   type        = string
   description = "The action that will be applied to the instance when it is terminated."
-  default     = false
+  default     = "STOP"
 }
 
-
+variable "threads_per_core" {
+  type        = number
+  description = "The action that will be applied to the instance when it is terminated."
+  default     = null
+}
 
 
 
