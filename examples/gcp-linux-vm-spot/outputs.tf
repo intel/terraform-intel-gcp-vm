@@ -1,29 +1,62 @@
-
-output "ip_address" {
-  value = google_compute_instance.example.network_interface
+output "cpu_platform" {
+  value       = module.spot-vm.cpu_platform
+  description = "The CPU platform of the VM instance"
 }
 
-output "instance_name" {
-    value = google_compute_instance.example.hostname
+output "current_status" {
+  value       = module.spot-vm.current_status
+  description = "Current status of the VM instance"
 }
 
-output "tags" {
-    value = google_compute_instance.example.tags
-}
-
-output "description" {
-    value = google_compute_instance.example.description
+output "id" {
+  value       = module.spot-vm.id
+  description = "An identifier for the resource"
 }
 
 output "instance_id" {
-    value = google_compute_instance.example.instance_id
+  value       = module.spot-vm.instance_id
+  description = "The server-assigned unique identifier of this instance"
 }
 
-output "guest_accelerator" {
-    value = google_compute_instance.example.guest_accelerator
+output "machine_type" {
+  value       = module.spot-vm.machine_type
+  description = "Type of the machine created"
 }
 
-output "attached_disk" {
-    value = google_compute_instance.example.attached_disk
+output "min_cpu_platform" {
+  value       = module.spot-vm.min_cpu_platform
+  description = "Minimum CPU platform for the VM instance"
 }
+
+output "name" {
+  value       = module.spot-vm.name
+  description = "Unique name of the instance created"
+}
+
+output "self_link" {
+  value       = module.spot-vm.self_link
+  description = "The URI of the created resource"
+}
+
+output "boot_disk_size" {
+  value       = module.spot-vm.boot_disk_size
+  description = "Size of the boot disk of the instance"
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
