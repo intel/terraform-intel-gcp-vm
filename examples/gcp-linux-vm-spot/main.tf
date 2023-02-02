@@ -1,5 +1,5 @@
 module "spot-vm" {
-  source              = "../../"
+  source = "../../"
   # project             = var.project
   boot_image_family   = "ubuntu-2004-lts"
   name                = "this-is-a-spot-vm"

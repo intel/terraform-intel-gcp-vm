@@ -103,7 +103,7 @@ variable "service_account" {
     service_email = optional(string, null)
     scopes        = optional(set(string), [])
   })
-  default = {}
+  default     = {}
   description = "Service account and scopes that will be associated with the GCE instance."
 }
 
@@ -304,20 +304,20 @@ variable "on_host_maintenance" {
 
 variable "access_config" {
   type = map(object({
-    nat_ip = optional(string, null)
+    nat_ip            = optional(string, null)
     public_ptr_domain = optional(string)
-    network_tier = optional(string)
+    network_tier      = optional(string)
   }))
-  default = {}
+  default     = {}
   description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
 
 variable "ipv6_access_config" {
   type = list(object({
     public_ptr_domain_name = optional(string, null)
-    network_tier        = optional(string, null)
+    network_tier           = optional(string, null)
   }))
-  default = []
+  default     = []
   description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
 

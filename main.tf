@@ -42,9 +42,9 @@ resource "google_compute_instance" "test-vm-instance" {
     dynamic "access_config" {
       for_each = var.access_config
       content {
-        nat_ip = access_config.value.nat_ip
+        nat_ip                 = access_config.value.nat_ip
         public_ptr_domain_name = access_config.value.public_ptr_domain
-        network_tier = access_config.value.network_tier
+        network_tier           = access_config.value.network_tier
       }
     }
 
@@ -52,7 +52,7 @@ resource "google_compute_instance" "test-vm-instance" {
       for_each = var.ipv6_access_config != [] ? var.ipv6_access_config : []
       content {
         public_ptr_domain_name = lookup(ipv6_access_config.value, "public_ptr_domain_name", null)
-        network_tier = lookup(ipv6_access_config.value, "network_tier", null)
+        network_tier           = lookup(ipv6_access_config.value, "network_tier", null)
       }
     }
   }
@@ -81,10 +81,10 @@ resource "google_compute_instance" "test-vm-instance" {
   }
 
   scheduling {
-    preemptible         = var.preemptible
-    automatic_restart   = var.preemptible ? false : var.automatic_restart
-    on_host_maintenance = var.preemptible ? false : var.on_host_maintenance
-    provisioning_model  = var.preemptible ? "SPOT" : var.provisioning_model
+    preemptible                 = var.preemptible
+    automatic_restart           = var.preemptible ? false : var.automatic_restart
+    on_host_maintenance         = var.preemptible ? false : var.on_host_maintenance
+    provisioning_model          = var.preemptible ? "SPOT" : var.provisioning_model
     instance_termination_action = var.termination_action
   }
 
