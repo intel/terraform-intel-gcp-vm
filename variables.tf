@@ -39,11 +39,6 @@ variable "desired_status" {
   default     = "RUNNING"
 }
 
-# variable "network_interface" {
-#   type        = map(any)
-#   description = "Networks to attach to the instance"
-# }
-
 variable "network" {
   type        = string
   description = "The name or self_link of the network to attach this interface to."
@@ -170,18 +165,6 @@ variable "tags" {
   default     = []
 }
 
-# variable "attached_disk" {
-#   type        = map(any)
-#   description = "Additional disks to attach to the instance. Can be repeated multiple times for multiple disks"
-#   default = {}
-# }
-
-# variable "can_ip_forward" {
-#   type        = bool
-#   description = "Whether to allow sending and receiving of packets with non-matching source or destination IPs"
-#   default = false
-# }
-
 variable "description" {
   type        = string
   description = "A brief description of this resource"
@@ -199,79 +182,6 @@ variable "hostname" {
   description = "A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid"
   default     = null
 }
-
-# variable "guest_accelerator" {
-#   type        = list(string)
-#   description = "List of the type and count of accelerator cards attached to the instance"
-# }
-
-# variable "labels" {
-#   type        = map(any)
-#   description = "A map of key/value label pairs to assign to the instance"
-# }
-
-# variable "metadata" {
-#   type        = map(any)
-#   description = "Metadata key/value pairs to make available from within the instance"
-# }
-
-# variable "metadata_startup_script" {
-#   type        = string
-#   description = "An alternative to using the startup-script metadata key, except this one forces the instance to be recreated (thus re-running the script) if it is changed. This replaces the startup-script metadata key on the created instance and thus the two mechanisms are not allowed to be used simultaneously."
-# }
-
-# variable "scheduling" {
-#   type        = map(any)
-#   description = "The scheduling strategy to use"
-# }
-
-# variable "scratch_disk" {
-#   type        = map(string)
-#   description = "Scratch disks to attach to the instance"
-# }
-
-# variable "service_account" {
-#   type        = map(string)
-#   description = "Service account to attach to the instance"
-# }
-
-
-
-# variable "shielded_instance_config" {
-#   type        = map(bool)
-#   description = " Enable Shielded VM on this instance. Shielded VM provides verifiable integrity to prevent against malware and rootkits"
-# }
-
-# variable "enable_display" {
-#   type        = bool
-#   description = "Enable Virtual Displays on this instance"
-# }
-
-# variable "resource_policies" {
-#   type        = list(any)
-#   description = "A list of self_links of resource policies to attach to the instance. Modifying this list will cause the instance to recreate"
-# }
-
-# variable "reservation_affinity" {
-#   type        = map(string)
-#   description = "Specifies the reservations that this instance can consume from"
-# }
-
-# variable "confidential_instance_config" {
-#   type        = map(any)
-#   description = "Enable Confidential Mode on this VM"
-# }
-
-# variable "advanced_machine_features" {
-#   type        = map(any)
-#   description = "Configure Nested Virtualisation and Simultaneous Hyper Threading on this VM"
-#   default = {}
-# }
-
-# variable "network_performance_config" {
-#   type        = map(string)
-#   description = "Optional, Beta Configures network performance settings for the instance"
-# }
 
 #TODO get feedback on this value
 variable "preemptible" {
@@ -357,49 +267,3 @@ variable "enable_integrity_monitoring" {
   description = "Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not."
   default     = true
 }
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

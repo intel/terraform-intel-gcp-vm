@@ -74,9 +74,6 @@ resource "google_compute_instance" "instance" {
       image = data.google_compute_image.image.self_link
       size  = var.boot_disk_size
       type  = var.boot_disk_type
-      # labels = {
-      #   my_label = "value"
-      # }
     }
   }
 
@@ -92,6 +89,7 @@ resource "google_compute_instance" "instance" {
     enable_nested_virtualization = var.enable_nested_virtualization
     threads_per_core             = var.threads_per_core
   }
+
 
   lifecycle {
     create_before_destroy = "true"
@@ -120,5 +118,4 @@ resource "google_compute_instance" "instance" {
   #     }))
   #   }))
   # }
-
 }

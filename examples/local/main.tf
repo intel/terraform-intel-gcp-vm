@@ -4,6 +4,7 @@ locals {
 
 
 
+
 variable "ipv6_access_config" {
   type = list(object({
     public_ptr_domain_name = optional(string, null)

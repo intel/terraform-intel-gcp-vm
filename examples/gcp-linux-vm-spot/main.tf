@@ -11,4 +11,3 @@ module "spot-vm" {
     "public" = {
     }
   }
-}
