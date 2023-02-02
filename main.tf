@@ -42,9 +42,9 @@ resource "google_compute_instance" "test-vm-instance" {
     dynamic "access_config" {
       for_each = var.access_config
       content {
-        nat_ip = access_config.value.nat_ip
+        nat_ip                 = access_config.value.nat_ip
         public_ptr_domain_name = access_config.value.public_ptr_domain
-        network_tier = access_config.value.network_tier
+        network_tier           = access_config.value.network_tier
       }
     }
 
@@ -52,7 +52,7 @@ resource "google_compute_instance" "test-vm-instance" {
       for_each = var.ipv6_access_config == null ? [] : [var.ipv6_access_config]
       content {
         public_ptr_domain_name = lookup(ipv6_access_config.value, "public_ptr_domain_name", null)
-        network_tier = lookup(ipv6_access_config.value, "network_tier", null)
+        network_tier           = lookup(ipv6_access_config.value, "network_tier", null)
       }
     }
   }
@@ -74,17 +74,14 @@ resource "google_compute_instance" "test-vm-instance" {
       image = data.google_compute_image.image.self_link
       size  = var.boot_disk_size
       type  = var.boot_disk_type
-      # labels = {
-      #   my_label = "value"
-      # }
     }
   }
 
   scheduling {
-    preemptible         = var.preemptible
-    automatic_restart   = var.preemptible ? false : var.automatic_restart
-    on_host_maintenance = var.preemptible ? false : var.on_host_maintenance
-    provisioning_model  = var.preemptible ? "SPOT" : var.provisioning_model
+    preemptible                 = var.preemptible
+    automatic_restart           = var.preemptible ? false : var.automatic_restart
+    on_host_maintenance         = var.preemptible ? false : var.on_host_maintenance
+    provisioning_model          = var.preemptible ? "SPOT" : var.provisioning_model
     instance_termination_action = var.termination_action
   }
 
@@ -92,23 +89,4 @@ resource "google_compute_instance" "test-vm-instance" {
     enable_nested_virtualization = var.enable_nested_virtualization
     threads_per_core             = var.threads_per_core
   }
-
-  # variable "additional_networks" {
-  #   description = "Additional network interface details for GCE, if any."
-  #   default     = []
-  #   type = list(object({
-  #     network            = string
-  #     subnetwork         = string
-  #     subnetwork_project = string
-  #     network_ip         = string
-  #     access_config = list(object({
-  #       nat_ip       = string
-  #       network_tier = string
-  #     }))
-  #     ipv6_access_config = list(object({
-  #       network_tier = string
-  #     }))
-  #   }))
-  # }
-
 }
