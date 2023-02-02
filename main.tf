@@ -1,7 +1,3 @@
-locals {
-
-}
-
 data "google_compute_image" "image" {
   family  = var.boot_image_family
   project = var.boot_image_project
@@ -42,18 +38,17 @@ resource "google_compute_instance" "test-vm-instance" {
     network_ip         = var.network_ip
     nic_type           = var.nic_type
     stack_type         = var.stack_type
+    access_config {
+      // Ephemeral public IP
+    }
   }
 
   # CPU platform and GPU options
   min_cpu_platform = var.min_cpu_platform
-  # Display device options
+
 
   # Guest Acceleration
   # TODO: Guest acceleration has been postponed until it is supported on Ice Lake. Currently supported on Cascade Lake. See issues for updates
-
-  # Container options
-
-  # Security
 
   #TODO: confidential_instance_config block only applies to AMD so the block has been omitted
 
@@ -75,6 +70,7 @@ resource "google_compute_instance" "test-vm-instance" {
     preemptible         = var.preemptible
     automatic_restart   = var.preemptible ? false : var.automatic_restart
     on_host_maintenance = var.preemptible ? false : var.on_host_maintenance
+    provisioning_model  = var.preemptible ? "SPOT" : var.provisioning_model
   }
 
   # variable "additional_networks" {
@@ -94,19 +90,5 @@ resource "google_compute_instance" "test-vm-instance" {
   #     }))
   #   }))
   # }
-
-
-  # Identity and API options
-
-  # Firewall options
-
-  # Advanced options
-  # Advanced networking options
-
-  # Advanced disks options
-
-  # Advanced management options
-
-  # Advanced sole tenancy options
 
 }

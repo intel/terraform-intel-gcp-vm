@@ -1,60 +1,72 @@
-
-# output "ip_address" {
-#   value = google_compute_instance.example.network_interface
-# }
-
-# output "instance_name" {
-#   value = google_compute_instance.example.hostname
-# }
-
-# output "tags" {
-#   value = google_compute_instance.example.tags
-# }
-
-# output "description" {
-#   value = google_compute_instance.example.description
-# }
-
-# output "instance_id" {
-#   value = google_compute_instance.example.instance_id
-# }
-
-# output "guest_accelerator" {
-#   value = google_compute_instance.example.guest_accelerator
-# }
-
-# output "attached_disk" {
-#   value = google_compute_instance.example.attached_disk
-# }
-
-output "disk_type" {
-  value       = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
-  description = "Disk type that was configured when the VM was created."
+output "cpu_platform" {
+  value       = google_compute_instance.test-vm-instance.cpu_platform
+  description = "The CPU platform of the VM instance"
 }
 
-output "disk_size" {
-  value       = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].type
-  description = "Disk type that was configured when the VM was created."
+output "current_status" {
+  value       = google_compute_instance.test-vm-instance.current_status
+  description = "Current status of the VM instance"
 }
 
-
-output "name" {
-  value       = google_compute_instance.test-vm-instance.name
-  description = "Name of the VM that has been created."
+output "id" {
+  value       = google_compute_instance.test-vm-instance.id
+  description = "An identifier for the resource"
 }
 
-output "hostname" {
-  value       = google_compute_instance.test-vm-instance.hostname
-  description = "Name of the VM that has been created."
+output "instance_id" {
+  value       = google_compute_instance.test-vm-instance.instance_id
+  description = "The server-assigned unique identifier of this instance"
 }
 
 output "machine_type" {
   value       = google_compute_instance.test-vm-instance.machine_type
-  description = "Instance type that was used for the VM deployment."
+  description = "Type of the machine created"
+}
+
+output "min_cpu_platform" {
+  value       = google_compute_instance.test-vm-instance.min_cpu_platform
+  description = "Minimum CPU platform for the VM instance"
+}
+
+output "name" {
+  value       = google_compute_instance.test-vm-instance.name
+  description = "Unique name of the instance created"
+}
+
+output "self_link" {
+  value       = google_compute_instance.test-vm-instance.self_link
+  description = "The URI of the created resource"
+}
+
+output "boot_disk_size" {
+  value       = google_compute_instance.test-vm-instance.boot_disk[0].initialize_params[0].size
+  description = "Size of the boot disk of the instance"
+}
+
+output "private_ip" {
+  value       = google_compute_instance.test-vm-instance.network_interface.0.network_ip
+  description = "Internal IP address of the instance"
+}
+
+output "public_ip" {
+  value       = google_compute_instance.test-vm-instance.network_interface.0.access_config.0.nat_ip
+  description = "Public IP address of the instance"
 }
 
 
-# Output creation
-output "instance" {
-  value = google_compute_instance.test-vm-instance
-}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

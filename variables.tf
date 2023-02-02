@@ -103,8 +103,7 @@ variable "service_account" {
     service_email = optional(string, null)
     scopes        = optional(set(string), [])
   })
-  default = {
-  }
+  default     = {}
   description = "Service account and scopes that will be associated with the GCE instance."
 }
 
@@ -274,22 +273,6 @@ variable "hostname" {
 #   description = "Optional, Beta Configures network performance settings for the instance"
 # }
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-###
 #TODO get feedback on this value
 variable "preemptible" {
   type        = bool
@@ -303,6 +286,13 @@ variable "automatic_restart" {
   default     = true
 }
 
+variable "provisioning_model" {
+  type        = string
+  description = "Describe the type of preemptible VM. This field accepts the value STANDARD or SPOT"
+  default     = "STANDARD"
+}
+
+
 variable "on_host_maintenance" {
   type        = string
   description = "Describes maintenance behavior for the instance. Can be MIGRATE or TERMINATE"
@@ -312,7 +302,6 @@ variable "on_host_maintenance" {
   }
   default = "MIGRATE"
 }
-
 
 
 
