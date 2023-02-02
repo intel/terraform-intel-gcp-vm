@@ -223,14 +223,13 @@ variable "access_config" {
 }
 
 variable "ipv6_access_config" {
-  type = object({
+  type = list(object({
     public_ptr_domain_name = optional(string, null)
-    network_tier           = optional(string, "PREMIUM")
-  })
-  default     = null
-  description = "An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access"
+    network_tier           = optional(string, null)
+  }))
+  default     = []
+  description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
-
 
 variable "enable_nested_virtualization" {
   type        = bool
@@ -238,14 +237,33 @@ variable "enable_nested_virtualization" {
   default     = false
 }
 
-variable "threads_per_core" {
-  type        = number
-  description = "The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1"
-  default     = 1
-}
-
 variable "termination_action" {
   type        = string
   description = "The action that will be applied to the instance when it is terminated."
+  default     = "STOP"
+}
+
+variable "threads_per_core" {
+  type        = number
+  description = "The action that will be applied to the instance when it is terminated."
+  default     = null
+}
+
+
+variable "enable_secure_boot" {
+  type        = bool
+  description = "Verify the digital signature of all boot components, and halt the boot process if signature verification fails."
   default     = false
+}
+
+variable "enable_vtpm" {
+  type        = bool
+  description = "Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates."
+  default     = true
+}
+
+variable "enable_integrity_monitoring" {
+  type        = bool
+  description = "Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not."
+  default     = true
 }

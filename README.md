@@ -57,7 +57,7 @@ No modules.
 
 | Name | Type |
 |------|------|
-| [google_compute_instance.test-vm-instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
+| [google_compute_instance.instance](https://registry.terraform.io/providers/hashicorp/google/latest/docs/resources/compute_instance) | resource |
 | [google_compute_image.image](https://registry.terraform.io/providers/hashicorp/google/latest/docs/data-sources/compute_image) | data source |
 
 ## Inputs
@@ -76,9 +76,12 @@ No modules.
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Enable deletion protection on this instance | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A brief description of this resource | `string` | `"Intel accelerated virtual machine."` | no |
 | <a name="input_desired_status"></a> [desired\_status](#input\_desired\_status) | Desired status of the instance. | `string` | `"RUNNING"` | no |
+| <a name="input_enable_integrity_monitoring"></a> [enable\_integrity\_monitoring](#input\_enable\_integrity\_monitoring) | Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. | `bool` | `true` | no |
 | <a name="input_enable_nested_virtualization"></a> [enable\_nested\_virtualization](#input\_enable\_nested\_virtualization) | Boolean that specifies if nested virtualization should be enabled or disabled on the instance. | `bool` | `false` | no |
+| <a name="input_enable_secure_boot"></a> [enable\_secure\_boot](#input\_enable\_secure\_boot) | Verify the digital signature of all boot components, and halt the boot process if signature verification fails. | `bool` | `false` | no |
+| <a name="input_enable_vtpm"></a> [enable\_vtpm](#input\_enable\_vtpm) | Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. | `bool` | `true` | no |
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid | `string` | `null` | no |
-| <a name="input_ipv6_access_config"></a> [ipv6\_access\_config](#input\_ipv6\_access\_config) | An array of IPv6 access configurations for this interface. Currently, only one IPv6 access config, DIRECT\_IPV6, is supported. If there is no ipv6AccessConfig specified, then this instance will have no external IPv6 Internet access | <pre>object({<br>    public_ptr_domain_name = optional(string, null)<br>    network_tier           = optional(string, "PREMIUM")<br>  })</pre> | `null` | no |
+| <a name="input_ipv6_access_config"></a> [ipv6\_access\_config](#input\_ipv6\_access\_config) | Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps | <pre>list(object({<br>    public_ptr_domain_name = optional(string, null)<br>    network_tier           = optional(string, null)<br>  }))</pre> | `[]` | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | The machine type to create | `string` | `"n2-standard-2"` | no |
 | <a name="input_min_cpu_platform"></a> [min\_cpu\_platform](#input\_min\_cpu\_platform) | Specifies a minimum CPU platform for the VM instance | `string` | `"Intel Ice Lake"` | no |
 | <a name="input_name"></a> [name](#input\_name) | A unique name for the resource, required by GCE. Changing this forces a new resource to be created. | `string` | n/a | yes |
@@ -96,8 +99,8 @@ No modules.
 | <a name="input_subnetwork"></a> [subnetwork](#input\_subnetwork) | The name or self\_link of the subnetwork to attach this interface to. Either network or subnetwork must be provided. | `string` | `null` | no |
 | <a name="input_subnetwork_project"></a> [subnetwork\_project](#input\_subnetwork\_project) | The project in which the subnetwork belongs. If the subnetwork is a name and this field is not provided, the provider project is used. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A list of network tags to attach to the instance | `list(string)` | `[]` | no |
-| <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `false` | no |
-| <a name="input_threads_per_core"></a> [threads\_per\_core](#input\_threads\_per\_core) | The number of threads per physical core. To disable simultaneous multithreading (SMT) set this to 1 | `number` | `1` | no |
+| <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `"STOP"` | no |
+| <a name="input_threads_per_core"></a> [threads\_per\_core](#input\_threads\_per\_core) | The action that will be applied to the instance when it is terminated. | `number` | `null` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | The zone that the machine should be created in. If it is not provided, the provider zone is used. | `string` | `null` | no |
 
 ## Outputs
