@@ -38,9 +38,20 @@ resource "google_compute_instance" "test-vm-instance" {
     network_ip         = var.network_ip
     nic_type           = var.nic_type
     stack_type         = var.stack_type
-    access_config {
-      // Ephemeral public IP
+
+    dynamic "access_config" {
+      for_each = var.access_config
+      content {
+        nat_ip = access_config.value.nat_ip
+        public_ptr_domain_name = access_config.value.public_ptr_domain
+        network_tier = access_config.value.network_tier
+      }
     }
+
+    # dynamic "ipv6_access_config" {
+    #   for_each = var.stack_type ==
+
+    # }
   }
 
   # CPU platform and GPU options
