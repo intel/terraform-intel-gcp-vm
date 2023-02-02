@@ -1,5 +1,6 @@
 # Local .terraform directories
 **/.terraform/*
+**/hack/*
 
 # .tfstate files
 *.tfstate

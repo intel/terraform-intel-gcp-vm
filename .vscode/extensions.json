@@ -1,0 +1,15 @@
+{
+  "recommendations": [
+    "pjmiravalle.terraform-advanced-syntax-highlighting",
+    "editorconfig.editorconfig",
+    "oderwat.indent-rainbow",
+    "yzhang.markdown-all-in-one",
+    "davidanson.vscode-markdownlint",
+    "mohsen1.prettify-json",
+    "run-at-scale.terraform-doc-snippets",
+    "gruntfuggly.todo-tree",
+    "redhat.vscode-yaml",
+    "vscode-icons-team.vscode-icons",
+    "shd101wyy.markdown-preview-enhanced"
+  ]
+}
