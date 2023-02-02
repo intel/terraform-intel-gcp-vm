@@ -340,6 +340,23 @@ variable "threads_per_core" {
 }
 
 
+variable "enable_secure_boot" {
+  type        = bool
+  description = "Verify the digital signature of all boot components, and halt the boot process if signature verification fails."
+  default     = false
+}
+
+variable "enable_vtpm" {
+  type        = bool
+  description = "Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates."
+  default     = true
+}
+
+variable "enable_integrity_monitoring" {
+  type        = bool
+  description = "Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not."
+  default     = true
+}
 
 
 

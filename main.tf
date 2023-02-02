@@ -3,7 +3,7 @@ data "google_compute_image" "image" {
   project = var.boot_image_project
 }
 
-resource "google_compute_instance" "test-vm-instance" {
+resource "google_compute_instance" "instance" {
 
   # General options
   name           = var.name
@@ -83,7 +83,7 @@ resource "google_compute_instance" "test-vm-instance" {
   scheduling {
     preemptible                 = var.preemptible
     automatic_restart           = var.preemptible ? false : var.automatic_restart
-    on_host_maintenance         = var.preemptible ? false : var.on_host_maintenance
+    on_host_maintenance         = var.on_host_maintenance
     provisioning_model          = var.preemptible ? "SPOT" : var.provisioning_model
     instance_termination_action = var.termination_action
   }
@@ -91,6 +91,16 @@ resource "google_compute_instance" "test-vm-instance" {
   advanced_machine_features {
     enable_nested_virtualization = var.enable_nested_virtualization
     threads_per_core             = var.threads_per_core
+  }
+
+  lifecycle {
+    create_before_destroy = "true"
+  }
+
+  shielded_instance_config {
+    enable_secure_boot          = var.enable_secure_boot
+    enable_vtpm                 = var.enable_vtpm
+    enable_integrity_monitoring = var.enable_integrity_monitoring
   }
 
   # variable "additional_networks" {
