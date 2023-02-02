@@ -48,10 +48,13 @@ resource "google_compute_instance" "test-vm-instance" {
       }
     }
 
-    # dynamic "ipv6_access_config" {
-    #   for_each = var.stack_type ==
-
-    # }
+    dynamic "ipv6_access_config" {
+      for_each = var.ipv6_access_config == null ? [] : [var.ipv6_access_config]
+      content {
+        public_ptr_domain_name = lookup(ipv6_access_config.value, "public_ptr_domain_name", null)
+        network_tier = lookup(ipv6_access_config.value, "network_tier", null)
+      }
+    }
   }
 
   # CPU platform and GPU options
@@ -82,6 +85,12 @@ resource "google_compute_instance" "test-vm-instance" {
     automatic_restart   = var.preemptible ? false : var.automatic_restart
     on_host_maintenance = var.preemptible ? false : var.on_host_maintenance
     provisioning_model  = var.preemptible ? "SPOT" : var.provisioning_model
+    instance_termination_action = var.termination_action
+  }
+
+  advanced_machine_features {
+    enable_nested_virtualization = var.enable_nested_virtualization
+    threads_per_core             = var.threads_per_core
   }
 
   # variable "additional_networks" {

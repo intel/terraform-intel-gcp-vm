@@ -103,11 +103,7 @@ variable "service_account" {
     service_email = optional(string, null)
     scopes        = optional(set(string), [])
   })
-<<<<<<< Updated upstream
-  default     = {}
-=======
   default = {}
->>>>>>> Stashed changes
   description = "Service account and scopes that will be associated with the GCE instance."
 }
 
@@ -321,16 +317,26 @@ variable "access_config" {
 
 variable "ipv6_access_config" {
   type = object({
-    public_ptr_domain = optional(string, null)
-    network_tier        = optional(set(string), [])
+    public_ptr_domain_name = optional(string, null)
+    network_tier        = optional(string, "PREMIUM")
   })
   default = {}
   description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
 
 
+variable "enable_nested_virtualization" {
+  type        = bool
+  description = "Boolean that specifies if nested virtualization should be enabled or disabled on the instance."
+  default     = false
+}
 
 
+variable "termination_action" {
+  type        = string
+  description = "The action that will be applied to the instance when it is terminated."
+  default     = false
+}
 
 
 
