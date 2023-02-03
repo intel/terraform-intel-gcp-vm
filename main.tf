@@ -43,7 +43,7 @@ resource "google_compute_instance" "instance" {
       for_each = var.access_config
       content {
         nat_ip                 = access_config.value.nat_ip
-        public_ptr_domain_name = access_config.value.public_ptr_domain
+        public_ptr_domain_name = access_config.value.public_ptr_domain_name
         network_tier           = access_config.value.network_tier
       }
     }
@@ -89,7 +89,6 @@ resource "google_compute_instance" "instance" {
     enable_nested_virtualization = var.enable_nested_virtualization
     threads_per_core             = var.threads_per_core
   }
-
 
   lifecycle {
     create_before_destroy = "true"
