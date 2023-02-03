@@ -44,12 +44,12 @@ output "boot_disk_size" {
 }
 
 output "private_ip" {
-  value       = google_compute_instance.instance.network_interface.0.network_ip
+  value       = google_compute_instance.instance.network_interface[0].network_ip
   description = "Internal IP address of the instance"
 }
 
 output "public_ip" {
-  value       = google_compute_instance.instance.network_interface.0.access_config.*.nat_ip
+  value       = google_compute_instance.instance.network_interface[0].access_config.*.nat_ip
   description = "Public IP address of the instance"
 }
 
