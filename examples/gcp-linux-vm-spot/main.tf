@@ -1,4 +1,4 @@
-module "spot_vm" {
+module "spot-vm" {
   source                    = "../../"
   project                   = var.project
   boot_image_family         = "ubuntu-2004-lts"
@@ -7,8 +7,9 @@ module "spot_vm" {
   on_host_maintenance       = "TERMINATE"
   preemptible               = true
   allow_stopping_for_update = true
-  access_config = {
-    "public" = {
-    }
-  }
+  access_config = [{
+    nat_ip                 = var.nat_ip
+    public_ptr_domain_name = var.public_ptr_domain_name
+    network_tier           = var.network_tier
+  }, ]
 }
