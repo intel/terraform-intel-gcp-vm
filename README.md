@@ -64,7 +64,7 @@ No modules.
 
 | Name | Description | Type | Default | Required |
 |------|-------------|------|---------|:--------:|
-| <a name="input_access_config"></a> [access\_config](#input\_access\_config) | Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps | <pre>map(object({<br>    nat_ip            = optional(string, null)<br>    public_ptr_domain = optional(string)<br>    network_tier      = optional(string)<br>  }))</pre> | `{}` | no |
+| <a name="input_access_config"></a> [access\_config](#input\_access\_config) | Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps | <pre>list(object({<br>    nat_ip                 = optional(string, null)<br>    public_ptr_domain_name = optional(string)<br>    network_tier           = optional(string)<br>  }))</pre> | `[]` | no |
 | <a name="input_allow_stopping_for_update"></a> [allow\_stopping\_for\_update](#input\_allow\_stopping\_for\_update) | If true, allows Terraform to stop the instance to update its properties | `bool` | `null` | no |
 | <a name="input_automatic_restart"></a> [automatic\_restart](#input\_automatic\_restart) | Specifies if the instance should be restarted if it was terminated by Compute Engine (not a user). | `bool` | `true` | no |
 | <a name="input_boot_disk"></a> [boot\_disk](#input\_boot\_disk) | The boot disk for the instance | `map(any)` | `{}` | no |
@@ -99,7 +99,7 @@ No modules.
 | <a name="input_subnetwork"></a> [subnetwork](#input\_subnetwork) | The name or self\_link of the subnetwork to attach this interface to. Either network or subnetwork must be provided. | `string` | `null` | no |
 | <a name="input_subnetwork_project"></a> [subnetwork\_project](#input\_subnetwork\_project) | The project in which the subnetwork belongs. If the subnetwork is a name and this field is not provided, the provider project is used. | `string` | `null` | no |
 | <a name="input_tags"></a> [tags](#input\_tags) | A list of network tags to attach to the instance | `list(string)` | `[]` | no |
-| <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `"STOP"` | no |
+| <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `null` | no |
 | <a name="input_threads_per_core"></a> [threads\_per\_core](#input\_threads\_per\_core) | The action that will be applied to the instance when it is terminated. | `number` | `null` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | The zone that the machine should be created in. If it is not provided, the provider zone is used. | `string` | `null` | no |
 

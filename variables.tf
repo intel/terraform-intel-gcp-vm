@@ -195,12 +195,12 @@ variable "on_host_maintenance" {
 }
 
 variable "access_config" {
-  type = map(object({
-    nat_ip            = optional(string, null)
-    public_ptr_domain = optional(string)
-    network_tier      = optional(string)
+  type = list(object({
+    nat_ip                 = optional(string, null)
+    public_ptr_domain_name = optional(string)
+    network_tier           = optional(string)
   }))
-  default     = {}
+  default     = []
   description = "Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps"
 }
 
@@ -222,7 +222,7 @@ variable "enable_nested_virtualization" {
 variable "termination_action" {
   type        = string
   description = "The action that will be applied to the instance when it is terminated."
-  default     = "STOP"
+  default     = null
 }
 
 variable "threads_per_core" {
