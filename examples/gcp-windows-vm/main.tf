@@ -1,4 +1,4 @@
-module "windows-vm" {
+module "windows_vm" {
   source              = "../../"
   project             = var.project
   boot_image_family   = "windows-2019-core"

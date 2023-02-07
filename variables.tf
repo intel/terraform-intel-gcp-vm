@@ -22,12 +22,6 @@ variable "min_cpu_platform" {
 ########################
 ####    Required    ####
 ########################
-variable "boot_disk" {
-  type        = map(any)
-  description = "The boot disk for the instance"
-  default     = {}
-}
-
 variable "name" {
   type        = string
   description = "A unique name for the resource, required by GCE. Changing this forces a new resource to be created."
@@ -79,18 +73,6 @@ variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
   default     = ""
-}
-
-variable "service_account_email" {
-  type        = string
-  description = "Service account to attach to the instance"
-  default     = ""
-}
-
-variable "service_account_scopes" {
-  type        = list(string)
-  description = "Service account to attach to the instance"
-  default     = []
 }
 
 variable "service_account" {
@@ -266,4 +248,41 @@ variable "enable_integrity_monitoring" {
   type        = bool
   description = "Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not."
   default     = true
+}
+
+variable "boot_disk_auto_delete" {
+  type        = bool
+  description = "Whether the disk will be auto-deleted when the instance is deleted."
+  default     = true
+}
+
+variable "boot_disk_mode" {
+  type        = string
+  description = "The mode in which to attach this disk, either READ_WRITE or READ_ONLY."
+  default     = "READ_WRITE"
+}
+
+
+variable "boot_disk_source" {
+  type        = string
+  description = "The name or self_link of the existing disk (such as those managed by google_compute_disk) or disk image."
+  default     = "READ_WRITE"
+}
+
+variable "boot_disk_byo_encryption_key" {
+  type        = string
+  description = "A 256-bit [customer-supplied encryption key] (https://cloud.google.com/compute/docs/disks/customer-supplied-encryption), encoded in RFC 4648 base64 to encrypt this disk."
+  default     = null
+}
+
+variable "boot_disk_labels" {
+  type        = map(string)
+  description = "A set of key/value label pairs assigned to the disk. This field is only applicable for persistent disks."
+  default     = {}
+}
+
+variable "visible_core_count" {
+  type        = number
+  description = "The number of physical cores to expose to an instance."
+  default     = null
 }

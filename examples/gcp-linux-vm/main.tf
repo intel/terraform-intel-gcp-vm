@@ -1,4 +1,4 @@
-module "linux-vm" {
+module "linux_vm" {
   source              = "../../"
   project             = var.project
   boot_image_family   = "ubuntu-2004-lts"

@@ -64,16 +64,23 @@ resource "google_compute_instance" "instance" {
   # Guest Acceleration
   # TODO: Guest acceleration has been postponed until it is supported on Ice Lake. Currently supported on Cascade Lake. See issues for updates
 
-  #TODO: confidential_instance_config block only applies to AMD so the block has been omitted
+  # TODO: confidential_instance_config block only applies to AMD so the block has been omitted
 
   # Boot disk options
   deletion_protection = var.deletion_protection
 
   boot_disk {
+    auto_delete             = var.boot_disk_auto_delete
+    mode                    = var.boot_disk_mode
+    disk_encryption_key_raw = var.boot_disk_byo_encryption_key
+    source                  = var.boot_disk_source
+    #TODO: kms_key_self_link for using google kms encryption keys
+
     initialize_params {
-      image = data.google_compute_image.image.self_link
-      size  = var.boot_disk_size
-      type  = var.boot_disk_type
+      image  = data.google_compute_image.image.self_link
+      size   = var.boot_disk_size
+      type   = var.boot_disk_type
+      labels = var.boot_disk_labels
     }
   }
 
@@ -88,6 +95,7 @@ resource "google_compute_instance" "instance" {
   advanced_machine_features {
     enable_nested_virtualization = var.enable_nested_virtualization
     threads_per_core             = var.threads_per_core
+    visible_core_count           = var.visible_core_count
   }
 
   lifecycle {
