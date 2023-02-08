@@ -10,4 +10,5 @@ module "linux_vm" {
     public_ptr_domain_name = var.public_ptr_domain_name
     network_tier           = var.network_tier
   }, ]
+  boot_disk_source = null
 }

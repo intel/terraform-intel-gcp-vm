@@ -74,7 +74,7 @@ resource "google_compute_instance" "instance" {
     mode                    = var.boot_disk_mode
     disk_encryption_key_raw = var.boot_disk_byo_encryption_key
     source                  = var.boot_disk_source
-    #TODO: kms_key_self_link for using google kms encryption keys
+        #TODO: kms_key_self_link for using google kms encryption keys
 
     initialize_params {
       image  = data.google_compute_image.image.self_link
