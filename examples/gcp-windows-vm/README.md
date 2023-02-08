@@ -71,3 +71,13 @@ terraform apply
 ```
 ## Considerations
 Add additional considerations here
+
+self link existing disk or disk image - modify boot_disk_source = null to point to the disk/disk image.  also modify main.tf in master repo to REM out 
+```hcl
+    initialize_params {
+      image  = data.google_compute_image.image.self_link
+      size   = var.boot_disk_size
+      type   = var.boot_disk_type
+      labels = var.boot_disk_labels
+    }
+```
