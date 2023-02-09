@@ -14,9 +14,6 @@ resource "google_compute_instance" "instance" {
   desired_status = var.desired_status
   project        = var.project != null ? var.project : null
 
-  #TODO evaluate DNS configuration if required
-
-
   # Machine configuration options
   machine_type              = var.machine_type
   allow_stopping_for_update = var.allow_stopping_for_update
@@ -60,12 +57,6 @@ resource "google_compute_instance" "instance" {
   # CPU platform and GPU options
   min_cpu_platform = var.min_cpu_platform
 
-
-  # Guest Acceleration
-  # TODO: Guest acceleration has been postponed until it is supported on Ice Lake. Currently supported on Cascade Lake. See issues for updates
-
-  # TODO: confidential_instance_config block only applies to AMD so the block has been omitted
-
   # Boot disk options
   deletion_protection = var.deletion_protection
 
@@ -74,7 +65,6 @@ resource "google_compute_instance" "instance" {
     mode                    = var.boot_disk_mode
     disk_encryption_key_raw = var.boot_disk_byo_encryption_key
     source                  = var.boot_disk_source
-    #TODO: kms_key_self_link for using google kms encryption keys
 
     initialize_params {
       image  = data.google_compute_image.image.self_link
@@ -107,22 +97,4 @@ resource "google_compute_instance" "instance" {
     enable_vtpm                 = var.enable_vtpm
     enable_integrity_monitoring = var.enable_integrity_monitoring
   }
-
-  # variable "additional_networks" {
-  #   description = "Additional network interface details for GCE, if any."
-  #   default     = []
-  #   type = list(object({
-  #     network            = string
-  #     subnetwork         = string
-  #     subnetwork_project = string
-  #     network_ip         = string
-  #     access_config = list(object({
-  #       nat_ip       = string
-  #       network_tier = string
-  #     }))
-  #     ipv6_access_config = list(object({
-  #       network_tier = string
-  #     }))
-  #   }))
-  # }
 }

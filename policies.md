@@ -6,7 +6,7 @@
 
 © Copyright 2022, Intel Corporation
 
-## HashiCorp Sentinel Policies
+## GCP VM module
 
 This file documents the HashiCorp Sentinel policies that apply to this module
 

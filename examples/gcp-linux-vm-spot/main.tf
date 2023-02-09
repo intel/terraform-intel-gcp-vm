@@ -1,4 +1,4 @@
-module "spot-vm" {
+module "spot_vm" {
   source                    = "../../"
   project                   = var.project
   boot_image_family         = "ubuntu-2004-lts"
@@ -12,4 +12,5 @@ module "spot-vm" {
     public_ptr_domain_name = var.public_ptr_domain_name
     network_tier           = var.network_tier
   }, ]
+  boot_disk_source = null
 }

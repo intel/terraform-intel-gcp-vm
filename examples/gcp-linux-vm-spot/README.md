@@ -17,14 +17,49 @@ This module creates a new network on GCP, then creates a VM that is in that spec
 variables.tf
 
 ```hcl
-<EXAMPLE>
+variable "project" {
+  type        = string
+  description = "The ID of the project in which the resource resides."
+  default     = "intel-csa-resource-gcp"
+}
+
+variable "nat_ip" {
+  type        = string
+  description = "Public ip address"
+  default     = null
+}
+
+variable "public_ptr_domain_name" {
+  type        = string
+  description = "The DNS domain name for the public PTR record"
+  default     = null
+}
+
+variable "network_tier" {
+  type        = string
+  description = "Network network_tier"
+  default     = "PREMIUM"
+}
 ```
 main.tf
 ```hcl
-<EXAMPLE>
+module "spot_vm" {
+  source                    = "../../"
+  project                   = var.project
+  boot_image_family         = "ubuntu-2004-lts"
+  name                      = "this-is-a-spot-vm"
+  network                   = "default"
+  on_host_maintenance       = "TERMINATE"
+  preemptible               = true
+  allow_stopping_for_update = true
+  access_config = [{
+    nat_ip                 = var.nat_ip
+    public_ptr_domain_name = var.public_ptr_domain_name
+    network_tier           = var.network_tier
+  }, ]
+  boot_disk_source = null
+}
 ```
-
-
 
 Run Terraform
 
@@ -37,3 +72,13 @@ terraform apply
 ```
 ## Considerations
 Add additional considerations here
+
+self link existing disk or disk image - modify boot_disk_source = null to point to the disk/disk image.  also modify main.tf in master repo to REM out 
+```hcl
+    initialize_params {
+      image  = data.google_compute_image.image.self_link
+      size   = var.boot_disk_size
+      type   = var.boot_disk_type
+      labels = var.boot_disk_labels
+    }
+```

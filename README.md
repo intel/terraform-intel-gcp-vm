@@ -8,7 +8,8 @@
 
 © Copyright 2022, Intel Corporation
 
-## Intel GCP VM Module
+## GCP VM module
+This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.   
 
 ## Usage
 
@@ -17,6 +18,10 @@ See examples folder for code ./examples/intel-gcp-vm/main.tf
 Example of main.tf
 
 ```hcl
+data "google_compute_image" "image" {
+  family  = var.boot_image_family
+  project = var.boot_image_project
+}
 
 
 
