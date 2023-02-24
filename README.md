@@ -13,18 +13,25 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 ## Usage
 
-See examples folder for code ./examples/intel-gcp-vm/main.tf
+See examples folder for code ./examples/gcp-linux-vm/main.tf
 
 Example of main.tf
 
 ```hcl
-data "google_compute_image" "image" {
-  family  = var.boot_image_family
-  project = var.boot_image_project
+module "linux_vm" {
+  source              = "../../"
+  project             = var.project
+  boot_image_family   = "ubuntu-2004-lts"
+  name                = "this-is-a-linux-vm"
+  network             = "default"
+  on_host_maintenance = "TERMINATE"
+  access_config = [{
+    nat_ip                 = var.nat_ip
+    public_ptr_domain_name = var.public_ptr_domain_name
+    network_tier           = var.network_tier
+  }, ]
+  boot_disk_source = null
 }
-
-
-
 ```
 
 Run Terraform
@@ -39,6 +46,8 @@ terraform apply
 Note that this example may create resources. Run `terraform destroy` when you don't need these resources anymore.
 
 ## Considerations  
+- The VM is created using the default network
+- The VM has a public IP address. If you want your VM to not have a public IP
 
 <!-- BEGIN_TF_DOCS -->
 ## Requirements

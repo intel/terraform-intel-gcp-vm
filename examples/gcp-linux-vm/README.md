@@ -18,43 +18,45 @@ variables.tf
 
 ```hcl
 variable "project" {
-  description = "Project id in GCP"
   type        = string
+  description = "The ID of the project in which the resource resides."
+  default     = "intel-csa-resource-gcp"
+}
+
+variable "nat_ip" {
+  type        = string
+  description = "Public ip address"
+  default     = null
+}
+
+variable "public_ptr_domain_name" {
+  type        = string
+  description = "The DNS domain name for the public PTR record"
+  default     = null
+}
+
+variable "network_tier" {
+  type        = string
+  description = "Network network_tier"
+  default     = "PREMIUM"
 }
 ```
 main.tf
 ```hcl
 
-resource "google_compute_network" "my_network" {
-  name                    = "my-network"
-  auto_create_subnetworks = true
-}
-
-resource "google_compute_subnetwork" "my_subnetwork" {
-  name          = "my-subnetwork"
-  network       = google_compute_network.my_network.self_link
-  ip_cidr_range = "10.0.0.0/16"
-  region        = "us-central1"
-}
-
-resource "google_compute_instance" "my_instance" {
-  name         = "my-instance"
-  machine_type = "n2-standard-2"
-  zone         = "us-central1-a"
-
-  network_interface {
-    network    = google_compute_network.my_network.name
-    subnetwork = google_compute_subnetwork.my_subnetwork.name
-    access_config {
-      // Ephemeral IP
-    }
-  }
-
-  boot_disk {
-    initialize_params {
-      image = "ubuntu-os-cloud/ubuntu-1804-lts"
-    }
-  }
+module "linux_vm" {
+  source              = "../../"
+  project             = var.project
+  boot_image_family   = "ubuntu-2004-lts"
+  name                = "this-is-a-linux-vm"
+  network             = "default"
+  on_host_maintenance = "TERMINATE"
+  access_config = [{
+    nat_ip                 = var.nat_ip
+    public_ptr_domain_name = var.public_ptr_domain_name
+    network_tier           = var.network_tier
+  }, ]
+  boot_disk_source = null
 }
 ```
 
