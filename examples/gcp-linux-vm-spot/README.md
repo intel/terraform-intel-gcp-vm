@@ -6,9 +6,9 @@
 
 © Copyright 2022, Intel Corporation
 
-## Intel GCP VM with network creation
+## Intel GCP Spot VM creation on the default network
 
-This module creates a new network on GCP, then creates a VM that is in that specific network. 
+This module creates a Linux Spot VM on the default network.  Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM-Spot"
 
 ## Usage
 
@@ -41,6 +41,7 @@ variable "network_tier" {
   default     = "PREMIUM"
 }
 ```
+
 main.tf
 ```hcl
 module "spot_vm" {
@@ -64,21 +65,14 @@ module "spot_vm" {
 Run Terraform
 
 ```hcl
-export TF_VAR_db_password ='<USE_A_STRONG_PASSWORD>'
-
 terraform init  
 terraform plan
 terraform apply 
 ```
-## Considerations
-Add additional considerations here
 
-self link existing disk or disk image - modify boot_disk_source = null to point to the disk/disk image.  also modify main.tf in master repo to REM out 
-```hcl
-    initialize_params {
-      image  = data.google_compute_image.image.self_link
-      size   = var.boot_disk_size
-      type   = var.boot_disk_type
-      labels = var.boot_disk_labels
-    }
-```
+## Considerations
+Add additional considerations here:
+- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Linux-VM-Spot"
+- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM-Spot"
+- The Spot VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
+of your choice

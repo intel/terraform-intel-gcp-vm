@@ -1,3 +1,26 @@
+
+# In this block the code determines the minimum CPU platform based on the machine type that the use has selected. We always recommend our customers to use the 
+# latest generation of Intel CPU platforms that are publicly available . As of the date of this repo, General Purpose N2 instances can be on either Ice Lake 
+# or Cascade Lake for the same price. For better price and performance, we are recommendaing to use Intel Ice Lake for N2 instances. For C3 instances, the 
+# minimum CPU platform is Intel Sapphire Rapids. As of the date of this repo, the C3 instances are in public preview. For M3 instances, the minimum CPU platform
+# is Intel Ice Lake. For C2 instances, the minimum CPU platform is Intel Cascade Lake. For the other instance types that are available on older generation 
+# Intel CPU, we are not populating the min CPU platform. We are using the default CPU platform that GCP will provide for these older generation of instances
+
+locals {
+  machine_type_regex = "^([cemn][123])"
+  machine_types = {
+    "n2": "Intel Ice Lake",
+    "c3": "Intel Sapphire Rapids",
+    "m3": "Intel Ice Lake",
+    "c2": "Intel Cascade Lake"
+    "n1": null
+    "m1": null
+    "m2": null
+    "e2": null
+  }
+  min_cpu_platform = lookup(local.machine_types,one(regex(local.machine_type_regex, var.machine_type)),null)
+}
+
 data "google_compute_image" "image" {
   family  = var.boot_image_family
   project = var.boot_image_project
@@ -55,7 +78,7 @@ resource "google_compute_instance" "instance" {
   }
 
   # CPU platform and GPU options
-  min_cpu_platform = var.min_cpu_platform
+  min_cpu_platform = local.min_cpu_platform
 
   # Boot disk options
   deletion_protection = var.deletion_protection

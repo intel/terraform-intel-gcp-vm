@@ -6,9 +6,9 @@
 
 © Copyright 2022, Intel Corporation
 
-## Intel GCP VM with network creation
+## Intel GCP VM on default network
 
-This module creates a new network on GCP, then creates a VM that is in that specific network.  Update the project with a corresponding project id in GCP. 
+This module creates a Windows VM on the default network.  Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM" 
 
 ## Usage
 
@@ -41,6 +41,7 @@ variable "network_tier" {
   default     = "PREMIUM"
 }
 ```
+
 main.tf
 ```hcl
 module "windows_vm" {
@@ -50,36 +51,26 @@ module "windows_vm" {
   boot_image_project  = "windows-cloud"
   name                = "this-is-a-windows-vm"
   network             = "default"
-  on_host_maintenance = "TERMINATE"
   access_config = [{
     nat_ip                 = var.nat_ip
     public_ptr_domain_name = var.public_ptr_domain_name
     network_tier           = var.network_tier
   }, ]
-    boot_disk_source = null
+  boot_disk_source = null
 }
 ```
 
-
-
 Run Terraform
 
-```hcl
-export TF_VAR_db_password ='<USE_A_STRONG_PASSWORD>'
-
+'''hcl
 terraform init  
 terraform plan
 terraform apply 
 ```
-## Considerations
-Add additional considerations here
 
-self link existing disk or disk image - modify boot_disk_source = null to point to the disk/disk image.  also modify main.tf in master repo to REM out 
-```hcl
-    initialize_params {
-      image  = data.google_compute_image.image.self_link
-      size   = var.boot_disk_size
-      type   = var.boot_disk_type
-      labels = var.boot_disk_labels
-    }
-```
+## Considerations
+Add additional considerations here:
+- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Windows-VM"
+- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Windows-VM"
+- The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
+of your choice
