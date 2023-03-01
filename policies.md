@@ -27,22 +27,14 @@ Allowed Types
 
 ## Policy 2
 
-Description: The configured "machine_type" should be an Intel Xeon 3rd Generation(code-named Ice Lake) Scalable processors or an Intel Xeon 4th Generation(code-named Sapphire Rapids) Scalable processors
+Description: This policy will be based on the google_compute_instance resource type and the minimum cpu platform (min_cpu_platform) parameter. This policy will allow "Intel Ice Lake", "Intel Sapphire Rapids" CPU platforms.
 
 Resource type: google_compute_instance
-
-Parameter: machine_type
-
-Allowed Types
-- **General Purpose:**  N2-Standard:  n2-standard-2, n2-standard-4, n2-standard-8, n2-standard-16, n2-standard-32, n2-standard-48, n2-standard-64, n2-standard-80, n2-standard-96, n2-standard-128
-- **General Purpose:** N2-HighMemory: n2-highmem-2, n2-highmem-4, n2-highmem-8, n2-highmem-16, n2-highmem-32, n2-highmem-48, n2-highmem-64, n2-highmem-80, n2-highmem-96, n2-highmem-128
-- **General Purpose:** N2-HighCPU: n2-highcpu-2, n2-highcpu-4, n2-highcpu-8, n2-highcpu-16, n2-highcpu-32, n2-highcpu-48, n2-highcpu-64, n2-highcpu-80, n2-highcpu-96
-- **Memory Optimized:** m3-ultramem-32, m3-ultramem-64, m3-ultramem-128, m3-megamem-64, m3-megamem-128
 
 Parameter: min_cpu_platform
 
 Allowed Types
-- Intel Ice Lake
+- Intel Cascade lake, Intel Ice Lake, Intel Sapphire Rapids
 
 ## Links
 https://cloud.google.com/compute/docs/cpu-platforms
