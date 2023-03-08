@@ -22,24 +22,6 @@ variable "project" {
   description = "The ID of the project in which the resource resides."
   default     = "intel-csa-resource-gcp"
 }
-
-variable "nat_ip" {
-  type        = string
-  description = "Public ip address"
-  default     = null
-}
-
-variable "public_ptr_domain_name" {
-  type        = string
-  description = "The DNS domain name for the public PTR record"
-  default     = null
-}
-
-variable "network_tier" {
-  type        = string
-  description = "Network network_tier"
-  default     = "PREMIUM"
-}
 ```
 
 main.tf
@@ -50,13 +32,11 @@ module "windows_vm" {
   boot_image_family   = "windows-2019-core"
   boot_image_project  = "windows-cloud"
   name                = "this-is-a-windows-vm"
-  network             = "default"
   access_config = [{
-    nat_ip                 = var.nat_ip
-    public_ptr_domain_name = var.public_ptr_domain_name
-    network_tier           = var.network_tier
+    nat_ip                 = null
+    public_ptr_domain_name = null
+    network_tier           = "PREMIUM"
   }, ]
-  boot_disk_source = null
 }
 ```
 

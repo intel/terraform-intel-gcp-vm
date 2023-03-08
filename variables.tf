@@ -26,6 +26,10 @@ variable "name" {
   description = "A unique name for the resource, required by GCE. Changing this forces a new resource to be created."
 }
 
+########################
+####     Other      ####
+########################
+
 variable "desired_status" {
   type        = string
   description = "Desired status of the instance."
@@ -110,10 +114,6 @@ variable "boot_image_project" {
   description = "The ID of the project in which the source image resides."
   default     = "ubuntu-os-cloud"
 }
-
-########################
-####     Other      ####
-########################
 
 variable "zone" {
   type        = string
@@ -259,7 +259,7 @@ variable "boot_disk_mode" {
 variable "boot_disk_source" {
   type        = string
   description = "The name or self_link of the existing disk (such as those managed by google_compute_disk) or disk image."
-  default     = "READ_WRITE"
+  default     = null       
 }
 
 variable "boot_disk_byo_encryption_key" {
