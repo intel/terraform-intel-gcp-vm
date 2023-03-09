@@ -23,14 +23,11 @@ module "linux_vm" {
   project             = var.project
   boot_image_family   = "ubuntu-2004-lts"
   name                = "this-is-a-linux-vm"
-  network             = "default"
-  on_host_maintenance = "TERMINATE"
   access_config = [{
-    nat_ip                 = var.nat_ip
-    public_ptr_domain_name = var.public_ptr_domain_name
-    network_tier           = var.network_tier
+    nat_ip                 = null
+    public_ptr_domain_name = null
+    network_tier           = "PREMIUM"
   }, ]
-  boot_disk_source = null
 }
 ```
 
@@ -86,7 +83,7 @@ No modules.
 | <a name="input_boot_disk_labels"></a> [boot\_disk\_labels](#input\_boot\_disk\_labels) | A set of key/value label pairs assigned to the disk. This field is only applicable for persistent disks. | `map(string)` | `{}` | no |
 | <a name="input_boot_disk_mode"></a> [boot\_disk\_mode](#input\_boot\_disk\_mode) | The mode in which to attach this disk, either READ\_WRITE or READ\_ONLY. | `string` | `"READ_WRITE"` | no |
 | <a name="input_boot_disk_size"></a> [boot\_disk\_size](#input\_boot\_disk\_size) | Size of the OS disk | `number` | `100` | no |
-| <a name="input_boot_disk_source"></a> [boot\_disk\_source](#input\_boot\_disk\_source) | The name or self\_link of the existing disk (such as those managed by google\_compute\_disk) or disk image. | `string` | `"READ_WRITE"` | no |
+| <a name="input_boot_disk_source"></a> [boot\_disk\_source](#input\_boot\_disk\_source) | The name or self\_link of the existing disk (such as those managed by google\_compute\_disk) or disk image. | `string` | `null` | no |
 | <a name="input_boot_disk_type"></a> [boot\_disk\_type](#input\_boot\_disk\_type) | Disk type associated with the OS disk | `string` | `"pd-ssd"` | no |
 | <a name="input_boot_image_family"></a> [boot\_image\_family](#input\_boot\_image\_family) | The image from which to initialize this disk | `string` | `"debian-10"` | no |
 | <a name="input_boot_image_project"></a> [boot\_image\_project](#input\_boot\_image\_project) | The ID of the project in which the source image resides. | `string` | `"ubuntu-os-cloud"` | no |
@@ -101,7 +98,6 @@ No modules.
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid | `string` | `null` | no |
 | <a name="input_ipv6_access_config"></a> [ipv6\_access\_config](#input\_ipv6\_access\_config) | Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps | <pre>list(object({<br>    public_ptr_domain_name = optional(string, null)<br>    network_tier           = optional(string, null)<br>  }))</pre> | `[]` | no |
 | <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | The machine type to create | `string` | `"n2-standard-2"` | no |
-| <a name="input_min_cpu_platform"></a> [min\_cpu\_platform](#input\_min\_cpu\_platform) | Specifies a minimum CPU platform for the VM instance | `string` | `"Intel Ice Lake"` | no |
 | <a name="input_name"></a> [name](#input\_name) | A unique name for the resource, required by GCE. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the network to attach this interface to. | `string` | `"default"` | no |
 | <a name="input_network_ip"></a> [network\_ip](#input\_network\_ip) | The private IP address to assign to the instance. If empty, the address will be automatically assigned. | `string` | `""` | no |
