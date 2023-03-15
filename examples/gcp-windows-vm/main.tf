@@ -1,5 +1,5 @@
 module "windows_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_family   = "windows-2019-core"
   boot_image_project  = "windows-cloud"
