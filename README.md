@@ -1,7 +1,5 @@
-
-
 <p align="center">
-  <img src="./images/logo-classicblue-800px.png" alt="Intel Logo" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
 # Intel® Cloud Optimization Modules for Terraform
@@ -19,7 +17,7 @@ Example of main.tf
 
 ```hcl
 module "linux_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_family   = "ubuntu-2004-lts"
   name                = "this-is-a-linux-vm"
