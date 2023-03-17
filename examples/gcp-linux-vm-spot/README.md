@@ -48,7 +48,7 @@ Run Terraform
 ```hcl
 terraform init  
 terraform plan
-terraform apply -var "project=<your_your_gcp_project_id>"
+terraform apply -var="project=<your_your_gcp_project_id>"
 ```
 
 ## Considerations
