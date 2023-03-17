@@ -19,12 +19,13 @@ variables.tf
 variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
-  default     = "intel-csa-resource-gcp"
 }
 ```
 
 main.tf
 ```hcl
+# You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
+
 module "windows_vm" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
@@ -44,7 +45,7 @@ Run Terraform
 '''hcl
 terraform init  
 terraform plan
-terraform apply 
+terraform apply -var "project=<your_your_gcp_project_id>"
 ```
 
 ## Considerations
