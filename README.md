@@ -16,6 +16,8 @@ See examples folder for code ./examples/gcp-linux-vm/main.tf
 Example of main.tf
 
 ```hcl
+# You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
+
 module "linux_vm" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
@@ -34,7 +36,7 @@ Run Terraform
 ```hcl
 terraform init  
 terraform plan
-terraform apply
+terraform apply -var="project=<your_your_gcp_project_id>"
 
 ```
 
