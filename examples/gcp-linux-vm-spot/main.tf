@@ -3,7 +3,7 @@
 module "spot_vm" {
   source                    = "intel/gcp-vm/intel"
   project                   = var.project
-  boot_image_family         = "ubuntu-2004-lts"
+  boot_image_family         = "ubuntu-2204-lts"
   name                      = "this-is-a-spot-vm"
   on_host_maintenance       = "TERMINATE"
   preemptible               = true
