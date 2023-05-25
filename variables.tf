@@ -95,7 +95,7 @@ variable "service_account" {
 variable "boot_image_family" {
   type        = string
   description = "The image from which to initialize this disk"
-  default     = "debian-10"
+  default     = "ubuntu-2204-lts"
 }
 
 variable "boot_disk_size" {
