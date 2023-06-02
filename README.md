@@ -51,7 +51,7 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.4.5 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50.0 |
 
 ## Providers
@@ -113,6 +113,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | A list of network tags to attach to the instance | `list(string)` | `[]` | no |
 | <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `null` | no |
 | <a name="input_threads_per_core"></a> [threads\_per\_core](#input\_threads\_per\_core) | The action that will be applied to the instance when it is terminated. | `number` | `null` | no |
+| <a name="input_user_data"></a> [user\_data](#input\_user\_data) | User data in base 64 to be placed on the instance | `string` | `null` | no |
 | <a name="input_visible_core_count"></a> [visible\_core\_count](#input\_visible\_core\_count) | The number of physical cores to expose to an instance. | `number` | `null` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | The zone that the machine should be created in. If it is not provided, the provider zone is used. | `string` | `null` | no |
 
