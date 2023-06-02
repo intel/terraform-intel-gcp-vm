@@ -280,3 +280,9 @@ variable "visible_core_count" {
   description = "The number of physical cores to expose to an instance."
   default     = null
 }
+
+variable user_data {
+  type        = string
+  description = "User data in base 64 to be placed on the instance"
+  default     = null
+}

@@ -1,0 +1,7 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+runcmd:
+  - apt install -y ansible
+  - ansible-pull -U https://github.com/vlexvnder/test-ansible-books.git ubuntu-test.yml

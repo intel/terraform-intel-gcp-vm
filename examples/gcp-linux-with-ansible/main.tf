@@ -4,27 +4,20 @@ variable "project" {
   default = "intel-csa-resource-gcp"
 }
 
+data "template_file" "user_data" {
+  template = file("./cloud_init.yml")
+}
+
 module "linux_vm" {
-  source              = "./terraform-intel-gcp-vm"
+  source              = "../../"
   project             = var.project
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "this-is-a-linux-vm"
+  name                = "alex-terra-test"
   zone                = "us-central1-a"
+  user_data    = data.template_file.user_data.rendered
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
     network_tier           = "PREMIUM"
   }, ]
-}
-
-resource "local_file" "ip" {
-    content  = module.linux_vm.public_ip[0]
-    filename = "ansible/ip.txt"
-}
-
-resource "null_resource" "null0" {
-    depends_on = [local_file.ip]
-    provisioner "local-exec" {
-        command = "ansible-playbook ansible/main.yml"
-    }
 }
