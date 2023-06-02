@@ -4,7 +4,7 @@ module "linux_vm" {
   source              = "../../"
   project             = var.project
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "saph-rapids-vm"
+  name                = "this-is-a-Saphire-Rapids-vm-Booyahv4"
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
