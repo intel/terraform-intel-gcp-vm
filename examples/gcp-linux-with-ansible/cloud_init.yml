@@ -2,6 +2,12 @@
 package_update: true
 package_upgrade: true
 
-runcmd:
-  - apt install -y ansible
-  - ansible-pull -U https://github.com/vlexvnder/test-ansible-books.git ubuntu-test.yml
+package:
+  - git
+
+ansible:
+  install_method: distro
+  package_name: ansible
+  pull:
+    url: "https://github.com/vlexvnder/test-ansible-books.git"
+    playbook_name: "ubuntu-test.yml"
