@@ -23,7 +23,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/newsroom/news/4th-gen-intel-xeon-outperforms-competition-real-world-workloads.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-00.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-00.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -33,7 +33,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.tomshardware.com/news/intel-claims-sapphire-rapids-up-to-7x-faster-than-amd-epyc-genoa-in-ai-and-other-workloads">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01a.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01a.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -43,7 +43,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://cloud.google.com/blog/products/compute/c3-machine-series-on-intel-sapphire-rapids-now-ga">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01b.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01b.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -51,7 +51,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779508/get-up-to-1-76x-the-java-maximum-transaction-throughput-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-02.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-02.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -61,7 +61,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779544/increase-hpc-performance-by-up-to-1-91x-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-03.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-03.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -71,7 +71,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779668/chooe-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-85x-the-media-transcoding-work.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-04.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-04.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -81,7 +81,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779670/achieve-up-to-1-68x-the-mp-linpack-performance-on-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-05.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-05.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -91,7 +91,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779742/achieve-up-to-2x-the-oltp-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-06.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-06.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -101,7 +101,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779753/choose-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-67x-the-postgresql-work.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-07.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-07.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -111,7 +111,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779864/achieve-up-to-1-54x-the-compute-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-08.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-08.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -121,7 +121,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779876/get-up-to-1-5x-the-hpc-performance-from-gcp-c3-vms-enabled-by-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-09.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-09.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -131,7 +131,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/779925/reap-up-to-1-83x-the-estimated-floating-point-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-10.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-10.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -181,13 +181,13 @@ Note that this example may create resources. Run `terraform destroy` when you do
 | Name | Version |
 |------|---------|
 | <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.0 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.50.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.50 |
 
 ## Modules
 
