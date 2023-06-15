@@ -283,6 +283,6 @@ variable "visible_core_count" {
 
 variable user_data {
   type        = string
-  description = "User data in base 64 to be placed on the instance"
+  description = "User data to be placed on the instance. Used to place cloud-init on VMs"
   default     = null
 }

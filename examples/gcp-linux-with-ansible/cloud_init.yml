@@ -4,10 +4,14 @@ package_upgrade: true
 
 package:
   - git
-
+runcmd:
+  - touch "home/cloud-init-proof"
 ansible:
   install_method: distro
   package_name: ansible
   pull:
     url: "https://github.com/vlexvnder/test-ansible-books.git"
-    playbook_name: "ubuntu-test.yml"
+    playbook_name: "ubuntu-install-intel-ai-toolkit.yml"
+    
+
+#   ansible-pull -U https://github.com/vlexvnder/test-ansible-books.git ubuntu-install-intel-ai-toolkit.yml
