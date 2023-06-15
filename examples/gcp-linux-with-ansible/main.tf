@@ -13,7 +13,7 @@ module "linux_vm" {
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "alex-terra-test"
+  name                = "intel-terra-test"
   zone                = "us-central1-a"
   user_data    = data.template_file.user_data.rendered
   access_config = [{
