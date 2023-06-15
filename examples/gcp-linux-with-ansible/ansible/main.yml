@@ -1,8 +1,0 @@
-- name: test integration
-  hosts: all
-
-  tasks:
-  - name: installing httpd
-    package:
-         name: httpd
-         state: present
