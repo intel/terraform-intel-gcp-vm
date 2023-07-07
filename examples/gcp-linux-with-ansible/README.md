@@ -10,7 +10,7 @@ Run the following commands in order:
 
 `git checkout amx`
 
-`cd terraform-intel-gcp-vm/examples/gcp-linux-with-ansible` 
+`cd examples/gcp-linux-with-ansible` 
 
 `terraform init` 
 
