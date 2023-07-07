@@ -1,0 +1,13 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+package:
+  - git
+
+ansible:
+  install_method: distro
+  package_name: ansible
+  pull:
+    url: "https://github.com/vlexvnder/test-ansible-books.git"
+    playbook_name: "ubuntu-fastchat.yml"
