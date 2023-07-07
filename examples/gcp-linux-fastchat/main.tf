@@ -28,7 +28,7 @@ module "linux_vm" {
   name                = "intel-fastchat-test"
   zone                = "us-central1-a"
   machine_type        = "c3-highcpu-44"
-  tags                = ["allow-http"]
+  source_tags                = ["allow-http"]
   user_data    = data.template_file.user_data.rendered
   access_config = [{
     nat_ip                 = null
