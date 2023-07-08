@@ -17,6 +17,7 @@ resource "google_compute_firewall" "allow_http" {
   }
   target_tags = ["allow-http"]
   priority    = 1000
+  source_ranges = "0.0.0.0/0"
 
 }
 
