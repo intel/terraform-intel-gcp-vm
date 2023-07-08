@@ -16,12 +16,13 @@ Run the following commands in order:
 
 `terraform apply`
 
-Your VM should now be created. By default, it is called intel-terra-test. It takes about 30 minutes for everything to run (mainly the intel-aikit install) 
 
-SSH into your VM from the cloud console. You can check if the install is complete by running cat /var/ansible-log and checking if the task “Reboot server” has run. 
+SSH into your VM from the cloud console.
 
-To run the amx demo, run:
+To run the demo, run:
 
-`source /usr/local/bin/run_demo.sh` 
+`python3 -m fastchat.serve.gradio_web_server --share` 
+
+and go to the gradio link
 
  
