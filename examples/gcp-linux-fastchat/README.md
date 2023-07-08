@@ -23,6 +23,18 @@ To run the demo, run:
 
 `python3 -m fastchat.serve.gradio_web_server --share` 
 
+--- NEED TO FIX ---
+
+This will fail, but it must run for the other commands to work.
+
+run
+
+`pip install gradio==3.10`
+`pip install gradio==3.35.2`
+
+`python3 -m fastchat.serve.gradio_web_server --share` 
+
+
 and go to the gradio link
 
  
