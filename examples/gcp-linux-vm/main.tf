@@ -1,5 +1,13 @@
+# --------------------------------------------------------
+#                     _       _       _
+#                    (_)     | |     | |
+#                     _ _ __ | |_ ___| |
+#                    | | '_ \| __/ _ \ |
+#                    | | | | | ||  __/ |
+#                    |_|_| |_|\__\___|_|
+# --------------------------------------------------------
+# Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
-
 module "linux_vm" {
   source              = "../../"
   project             = var.project

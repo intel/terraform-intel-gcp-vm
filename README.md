@@ -7,7 +7,136 @@
 © Copyright 2022, Intel Corporation
 
 ## GCP VM module
-This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.   
+This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.
+
+## Performance Data
+
+#### Find all the information below plus even more by navigating our full library
+#### [INTEL CLOUD PERFROMANCE DATA LIBRARY for GCP](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
+
+#
+
+
+<center>
+
+#### [4th Gen Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.intel.com/content/www/us/en/newsroom/news/4th-gen-intel-xeon-outperforms-competition-real-world-workloads.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/newsroom/news/4th-gen-intel-xeon-outperforms-competition-real-world-workloads.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-00.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Up to 7X Faster AI and Other Workloads with 4th Gen Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.tomshardware.com/news/intel-claims-sapphire-rapids-up-to-7x-faster-than-amd-epyc-genoa-in-ai-and-other-workloads)
+
+<p align="center">
+  <a href="https://www.tomshardware.com/news/intel-claims-sapphire-rapids-up-to-7x-faster-than-amd-epyc-genoa-in-ai-and-other-workloads">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01a.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [GCP C3 VMs with 4th Gen Intel® Xeon® Scalable Processor (Sapphire Rapids) Industry-leading Price-performance](https://cloud.google.com/blog/products/compute/c3-machine-series-on-intel-sapphire-rapids-now-ga)
+
+<p align="center">
+  <a href="https://cloud.google.com/blog/products/compute/c3-machine-series-on-intel-sapphire-rapids-now-ga">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-01b.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#### [Get up to 1.76x the Java Maximum Transaction Throughput with GCP C3 VMs Featuring 4th Generation Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779508/get-up-to-1-76x-the-java-maximum-transaction-throughput-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779508/get-up-to-1-76x-the-java-maximum-transaction-throughput-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-02.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Increase HPC Performance by up to 1.91x with GCP C3 VMs Featuring 4th Generation Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779544/increase-hpc-performance-by-up-to-1-91x-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779544/increase-hpc-performance-by-up-to-1-91x-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-03.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [GCP C3 4th Generation Intel® Xeon® Scalable Processor (Sapphire Rapids) Accomplishs up to 1.85x the Media Transcoding Work](https://www.intel.com/content/www/us/en/content-details/779668/chooe-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-85x-the-media-transcoding-work.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779668/chooe-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-85x-the-media-transcoding-work.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-04.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Achieve up to 1.68x the MP LINPACK Performance with GCP C3 4th Generation Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779670/achieve-up-to-1-68x-the-mp-linpack-performance-on-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779670/achieve-up-to-1-68x-the-mp-linpack-performance-on-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-05.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Achieve up to 2x the OLTP Performance with GCP C3 4th Generation Intel® Xeon® Scalable Processor (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779742/achieve-up-to-2x-the-oltp-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779742/achieve-up-to-2x-the-oltp-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-06.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Choose C3 GCP VMs Featuring 4th Gen Intel® Xeon® Scalable Processors (Sapphire Rapids) to Accomplish up to 1.67x the PostgreSQL Work](https://www.intel.com/content/www/us/en/content-details/779753/choose-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-67x-the-postgresql-work.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779753/choose-c3-gcp-vms-featuring-4th-gen-intel-xeon-scalable-processors-to-accomplish-up-to-1-67x-the-postgresql-work.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-07.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Achieve up to 1.54x the Compute Performance with GCP C3 VMs Featuring 4th Gen Intel® Xeon® Scalable Processors (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779864/achieve-up-to-1-54x-the-compute-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779864/achieve-up-to-1-54x-the-compute-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-08.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Get up to 1.5x the HPC Performance from GCP C3 VMs Enabled by 4th Gen Intel® Xeon® Scalable Processors (Sapphire Rapids)](https://www.intel.com/content/www/us/en/content-details/779876/get-up-to-1-5x-the-hpc-performance-from-gcp-c3-vms-enabled-by-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779876/get-up-to-1-5x-the-hpc-performance-from-gcp-c3-vms-enabled-by-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-09.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+#### [Reap up to 1.83x the Estimated Floating-Point Performance with GCP C3 VMs Featuring 4th Gen Intel® Xeon® Scalable Processors](https://www.intel.com/content/www/us/en/content-details/779925/reap-up-to-1-83x-the-estimated-floating-point-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/779925/reap-up-to-1-83x-the-estimated-floating-point-performance-with-gcp-c3-vms-featuring-4th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gcp-vm-10.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+
+</center>
 
 ## Usage
 
@@ -51,14 +180,15 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.4.5 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.0 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50 |
+
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.50.0 |
+| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.50 |
 
 ## Modules
 
