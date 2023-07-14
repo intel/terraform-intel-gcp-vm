@@ -19,15 +19,7 @@ Run the following commands in order:
 
 SSH into your VM from the cloud console.
 
-To run the demo, ssh into the n2 instance and run
-
-`python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --device cpu --controller-address http://<c3-ip>:21001 --worker-address http://<own ip>:21002 --host <own ip> --model-name xeon-3`
-
 Ssh into the c3 instance and run
-
-`python3 -m fastchat.serve.controller --host 0.0.0.0`
-
-`python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --device cpu --model-name xeon-4 --port 21004 --worker-address http://localhost:21004`
 
 `python3 -m fastchat.serve.gradio_web_server_multi --share` 
 
