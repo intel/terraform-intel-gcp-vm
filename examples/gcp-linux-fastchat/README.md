@@ -19,20 +19,28 @@ Run the following commands in order:
 
 SSH into your VM from the cloud console.
 
-To run the demo, run:
+To run the demo, ssh into the n2 instance and run
 
-`python3 -m fastchat.serve.gradio_web_server --share` 
+`python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --device cpu --controller-address http://<c3-ip>:21001 --worker-address http://<own ip>:21002 --host <own ip> --model-name xeon-3`
 
---- NEED TO FIX ---
+Ssh into the c3 instance and run
 
-This will fail, but it must run for the other commands to work.
+`python3 -m fastchat.serve.controller --host 0.0.0.0`
 
-run
+`python3 -m fastchat.serve.model_worker --model-path lmsys/fastchat-t5-3b-v1.0 --device cpu --model-name xeon-4 --port 21004 --worker-address http://localhost:21004`
+
+`python3 -m fastchat.serve.gradio_web_server_multi --share` 
+
+--- KNOWN ISSUE ---
+
+This may fail. In this case, run
 
 `pip install gradio==3.10`
 `pip install gradio==3.35.2`
 
-`python3 -m fastchat.serve.gradio_web_server --share` 
+Then, run:
+
+`python3 -m fastchat.serve.gradio_web_multi --share` 
 
 
 and go to the gradio link

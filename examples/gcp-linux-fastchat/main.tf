@@ -8,6 +8,9 @@ data "template_file" "user_data" {
   template = file("./cloud_init.yml")
 }
 
+data "template_file" "user_data_worker" {
+  template = file("./cloud_init_worker.yml")
+}
 
 module "linux_vm" {
   source              = "../../"
@@ -16,11 +19,44 @@ module "linux_vm" {
   boot_image_family   = "ubuntu-2204-lts"
   name                = "intel-fastchat-test"
   zone                = "us-central1-a"
-  machine_type        = "c3-highcpu-44"
-  user_data    = data.template_file.user_data.rendered
+  machine_type        = "c3-highcpu-88"
+  tags                = ["fschat"]
+  user_data    = data.template_file.user_data_worker.rendered
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
     network_tier           = "PREMIUM"
   }, ]
+}
+
+module "linux_vm_n2" {
+  source              = "../../"
+  project             = var.project
+  boot_image_project  = "ubuntu-os-cloud"
+  boot_image_family   = "ubuntu-2204-lts"
+  name                = "intel-fastchat-older-node"
+  zone                = "us-central1-a"
+  machine_type        = "n2-highcpu-44"
+  tags                = ["fschat"]
+  user_data    = data.template_file.user_data_worker.rendered
+  access_config = [{
+    nat_ip                 = null
+    public_ptr_domain_name = null
+    network_tier           = "PREMIUM"
+  }, ]
+}
+
+resource "google_compute_firewall" "rules" {
+  project     =  var.project
+  name        = "fastchat-firewall"
+  network     = "default"
+  description = "Allows fastchat VMs to communicate"
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["21000-21020"]
+  }
+
+  source_tags = ["fschat"]
+  target_tags = ["fschat"]
 }
