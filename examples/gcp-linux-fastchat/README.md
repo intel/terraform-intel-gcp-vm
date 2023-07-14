@@ -1,3 +1,5 @@
+This demo will demonstrate the 1.3x speedup in Large Language Model CPU inference from 3rd gen Xeon to 4th gen Xeon
+
 You may need to change the appropriate IAM settings as described here: https://cloud.google.com/docs/terraform/get-started-with-terraform 
 
 Next, enter the cloud shell in GCP (terminal button on top right of page) 
