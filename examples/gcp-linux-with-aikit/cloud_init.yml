@@ -10,4 +10,4 @@ ansible:
   package_name: ansible
   pull:
     url: "https://github.com/vlexvnder/test-ansible-books.git"
-    playbook_name: "ubuntu-install-intel-ai-toolkit.yml"
+    playbook_name: "ubuntu/ubuntu-install-intel-ai-toolkit.yml"

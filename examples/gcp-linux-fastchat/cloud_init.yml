@@ -10,5 +10,5 @@ ansible:
   package_name: ansible
   pull:
     url: "https://github.com/vlexvnder/test-ansible-books.git"
-    playbook_name: "ubuntu-fastchat.yml"
+    playbook_name: "ubuntu/ubuntu-fastchat.yml"
     
