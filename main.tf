@@ -36,10 +36,15 @@ resource "google_compute_instance" "instance" {
   hostname       = var.hostname
   desired_status = var.desired_status
   project        = var.project != null ? var.project : null
-
+ 
   # Machine configuration options
   machine_type              = var.machine_type
   allow_stopping_for_update = var.allow_stopping_for_update
+
+  #inject cloud-init and other user_data, if applicable
+  metadata = {
+    user-data = var.user_data
+  }
 
   dynamic "service_account" {
     for_each = var.service_account == null ? [] : [var.service_account]

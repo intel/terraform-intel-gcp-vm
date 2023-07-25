@@ -95,7 +95,7 @@ variable "service_account" {
 variable "boot_image_family" {
   type        = string
   description = "The image from which to initialize this disk"
-  default     = "debian-10"
+  default     = "ubuntu-2204-lts"
 }
 
 variable "boot_disk_size" {
@@ -278,5 +278,11 @@ variable "boot_disk_labels" {
 variable "visible_core_count" {
   type        = number
   description = "The number of physical cores to expose to an instance."
+  default     = null
+}
+
+variable user_data {
+  type        = string
+  description = "User data to be placed on the instance. Used to place cloud-init on VMs"
   default     = null
 }

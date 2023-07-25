@@ -1,0 +1,14 @@
+#cloud-config
+package_update: true
+package_upgrade: true
+
+package:
+  - git
+
+ansible:
+  install_method: distro
+  package_name: ansible
+  pull:
+    url: "https://github.com/vlexvnder/test-ansible-books.git"
+    playbook_name: "ubuntu/ubuntu-fastchat-worker.yml"
+    extra-vars: "c3_ip=10.128.15.213 own_ip=10.128.15.214"

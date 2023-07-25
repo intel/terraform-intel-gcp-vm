@@ -180,7 +180,7 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.3.0 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.0 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50 |
 
 ## Providers
@@ -214,7 +214,7 @@ No modules.
 | <a name="input_boot_disk_size"></a> [boot\_disk\_size](#input\_boot\_disk\_size) | Size of the OS disk | `number` | `100` | no |
 | <a name="input_boot_disk_source"></a> [boot\_disk\_source](#input\_boot\_disk\_source) | The name or self\_link of the existing disk (such as those managed by google\_compute\_disk) or disk image. | `string` | `null` | no |
 | <a name="input_boot_disk_type"></a> [boot\_disk\_type](#input\_boot\_disk\_type) | Disk type associated with the OS disk | `string` | `"pd-ssd"` | no |
-| <a name="input_boot_image_family"></a> [boot\_image\_family](#input\_boot\_image\_family) | The image from which to initialize this disk | `string` | `"debian-10"` | no |
+| <a name="input_boot_image_family"></a> [boot\_image\_family](#input\_boot\_image\_family) | The image from which to initialize this disk | `string` | `"ubuntu-2204-lts"` | no |
 | <a name="input_boot_image_project"></a> [boot\_image\_project](#input\_boot\_image\_project) | The ID of the project in which the source image resides. | `string` | `"ubuntu-os-cloud"` | no |
 | <a name="input_can_ip_forward"></a> [can\_ip\_forward](#input\_can\_ip\_forward) | Conditional that allows sending and receiving of packets with non-matching source or destination IPs. | `bool` | `false` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Enable deletion protection on this instance | `bool` | `false` | no |
@@ -242,6 +242,7 @@ No modules.
 | <a name="input_tags"></a> [tags](#input\_tags) | A list of network tags to attach to the instance | `list(string)` | `[]` | no |
 | <a name="input_termination_action"></a> [termination\_action](#input\_termination\_action) | The action that will be applied to the instance when it is terminated. | `string` | `null` | no |
 | <a name="input_threads_per_core"></a> [threads\_per\_core](#input\_threads\_per\_core) | The action that will be applied to the instance when it is terminated. | `number` | `null` | no |
+| <a name="input_user_data"></a> [user\_data](#input\_user\_data) | User data to be placed on the instance. Used to place cloud-init on VMs | `string` | `null` | no |
 | <a name="input_visible_core_count"></a> [visible\_core\_count](#input\_visible\_core\_count) | The number of physical cores to expose to an instance. | `number` | `null` | no |
 | <a name="input_zone"></a> [zone](#input\_zone) | The zone that the machine should be created in. If it is not provided, the provider zone is used. | `string` | `null` | no |
 
