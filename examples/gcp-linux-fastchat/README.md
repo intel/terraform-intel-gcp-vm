@@ -34,7 +34,7 @@ This may fail. In this case, run
 
 Then, run:
 
-`python3 -m fastchat.serve.gradio_web_multi --share` 
+`python3 -m fastchat.serve.gradio_web_server_multi --share` 
 
 
 and go to the gradio link

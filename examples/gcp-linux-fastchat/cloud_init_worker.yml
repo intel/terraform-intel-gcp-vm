@@ -9,6 +9,6 @@ ansible:
   install_method: distro
   package_name: ansible
   pull:
-    url: "https://github.com/vlexvnder/test-ansible-books.git"
-    playbook_name: "ubuntu/ubuntu-fastchat-worker.yml"
-    extra-vars: "c3_ip=10.128.15.213 own_ip=10.128.15.214"
+    url: "https://github.com/intel/optimized-cloud-recipes.git"
+    playbook_name: "recipes/ai-fastchat-amx-ubuntu/recipe-worker.yml"
+    extra-vars: "controller_ip=${controller_ip} worker_ip=${worker_ip}"
