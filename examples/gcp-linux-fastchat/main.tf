@@ -18,7 +18,7 @@ variable "worker_ip" {
 }
 
 module "linux_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
@@ -36,7 +36,7 @@ module "linux_vm" {
 }
 
 module "linux_vm_worker" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
