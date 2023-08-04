@@ -8,10 +8,6 @@ Run the following commands in order:
 
 `git clone https://github.com/intel/terraform-intel-gcp-vm.git`
 
-`cd terraform-intel-gcp-vm`
-
-`git checkout amx`
-
 `cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat` 
 
 `terraform init` 
@@ -23,7 +19,8 @@ SSH into your VM from the cloud console.
 
 Ssh into the c3 instance and run
 
-`python3 -m fastchat.serve.gradio_web_server_multi --share` 
+`source /usr/local/bin/run_demo.sh` 
+
 
 --- KNOWN ISSUE ---
 
@@ -34,7 +31,8 @@ This may fail. In this case, run
 
 Then, run:
 
-`python3 -m fastchat.serve.gradio_web_multi --share` 
+`python3 -m fastchat.serve.gradio_web_server_multi --share` 
+
 
 
 and go to the gradio link
