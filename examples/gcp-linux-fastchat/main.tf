@@ -14,6 +14,7 @@ variable "worker_ip" {
   type        = string
   description = "IP of worker node"
   default = "10.128.15.214"
+
 }
 
 module "linux_vm" {

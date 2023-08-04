@@ -21,6 +21,7 @@ Ssh into the c3 instance and run
 
 `source /usr/local/bin/run_demo.sh` 
 
+
 --- KNOWN ISSUE ---
 
 This may fail. In this case, run
@@ -31,6 +32,7 @@ This may fail. In this case, run
 Then, run:
 
 `python3 -m fastchat.serve.gradio_web_server_multi --share` 
+
 
 
 and go to the gradio link

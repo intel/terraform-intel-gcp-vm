@@ -12,3 +12,4 @@ ansible:
     url: "https://github.com/intel/optimized-cloud-recipes.git"
     playbook_name: "recipes/ai-fastchat-amx-ubuntu/recipe-worker.yml"
     extra-vars: "controller_ip=${controller_ip} worker_ip=${worker_ip}"
+
