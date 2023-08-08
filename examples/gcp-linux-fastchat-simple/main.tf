@@ -22,18 +22,18 @@ module "linux_vm" {
   }, ]
 }
 
-# Port 7860 is required to access the FastChat Webserver without proxying through gradio. Disabled by default.
-resource "google_compute_firewall" "rules" {
-  project     =  var.project
-  name        = "fastchat-firewall"
-  network     = "default"
-  description = "Allows access to FastChat Webserver."
-  disabled    = true # Remove this line or set to false to open up the webserver to traffic from port 7860
+# FastChat Gradio Webserver can be accessed by the Gradio Proxy. See https://xxxxxxx.gradio.live URL that is generated during the gradio run
+# Otherwise uncomment this to allow access to the VM Public IP on Port 7860
+# resource "google_compute_firewall" "rules" {
+#   project     =  var.project
+#   name        = "fastchat-firewall"
+#   network     = "default"
+#   description = "Allows access to FastChat Webserver."
 
-  allow {
-    protocol  = "tcp"
-    ports     = ["7860"]
-  }
-  source_ranges = [ "0.0.0.0/0" ]
-  target_tags = ["fschat"]
-}
+#   allow {
+#     protocol  = "tcp"
+#     ports     = ["7860"]
+#   }
+#   source_ranges = [ "0.0.0.0/0" ]
+#   target_tags = ["fschat"]
+# }

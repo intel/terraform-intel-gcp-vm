@@ -32,8 +32,13 @@ You may need to change the appropriate IAM settings as described here: https://c
 1. **Wait ~10 minutes** for the Recipe to download/install FastChat and the LLM model before continuing
 2. SSH into newly created GCP VM
 3. **Run `source /usr/local/bin/run_demo.sh`**
-3.5 If you did not choose to open a port, your app will be proxied through gradio. You will see a public link which you can navigate to.
-4. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
+4. If you did not choose to open a port, your app will be proxied through gradio. See https://xxxxxxx.gradio.live URL that is generated during the gradio run.
+5. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
+
+<p align="center">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Intel Logo" width="250"/>
+</p>
+
 
 --- KNOWN ISSUE ---
 
@@ -47,7 +52,7 @@ Then, run:
 
 `source /usr/local/bin/run_demo.sh` 
 
-and navigate to http://<VM_PLUBLIC_IP>:7860 on your computer.
+And navigate again using your browser.
 
 ## Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
 
@@ -55,4 +60,3 @@ and navigate to http://<VM_PLUBLIC_IP>:7860 on your computer.
 2. CGP account access configured: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference.html#running-terraform-on-your-workstation
 3. Terraform: https://learn.hashicorp.com/tutorials/terraform/install-cli
 4. Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
- 
