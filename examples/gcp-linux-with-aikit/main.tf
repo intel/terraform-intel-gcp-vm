@@ -9,7 +9,7 @@ data "template_file" "user_data" {
 }
 
 module "linux_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"

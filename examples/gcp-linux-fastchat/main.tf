@@ -18,7 +18,7 @@ variable "worker_ip" {
 }
 
 module "linux_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
@@ -36,7 +36,7 @@ module "linux_vm" {
 }
 
 module "linux_vm_worker" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
@@ -65,5 +65,21 @@ resource "google_compute_firewall" "rules" {
   }
 
   source_tags = ["fschat"]
+  target_tags = ["fschat"]
+}
+
+# Port 7860 is required to access the FastChat Webserver without proxying through gradio. Disabled by default.
+resource "google_compute_firewall" "rules" {
+  project     =  var.project
+  name        = "fastchat-firewall-public-access"
+  network     = "default"
+  description = "Allows access to FastChat Webserver."
+  disabled    = true # Remove this line or set to false to open up the webserver to traffic from port 7860
+
+  allow {
+    protocol  = "tcp"
+    ports     = ["7860"]
+  }
+  source_ranges = [ "0.0.0.0/0" ]
   target_tags = ["fschat"]
 }

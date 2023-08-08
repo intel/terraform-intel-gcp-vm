@@ -3,7 +3,7 @@
 </p>
 # Intel Cloud Optimization Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2023, Intel Corporation
 
 ## Intel GCP VM on default network
 
