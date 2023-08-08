@@ -4,7 +4,7 @@
 
 # Intel® Cloud Optimization Modules for Terraform
 
-© Copyright 2022, Intel Corporation
+© Copyright 2023, Intel Corporation
 
 ## GCP VM module
 This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.

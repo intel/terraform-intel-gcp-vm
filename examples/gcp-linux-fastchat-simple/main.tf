@@ -6,7 +6,7 @@ variable "project" {
 
 #GCP Linux VM with Intel Cloud Optimized Recipe for FastChat
 module "linux_vm" {
-  source              = "../../"
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
@@ -23,7 +23,7 @@ module "linux_vm" {
 }
 
 # FastChat Gradio Webserver can be accessed by the Gradio Proxy. See https://xxxxxxx.gradio.live URL that is generated during the gradio run
-# Otherwise uncomment this to allow access to the VM Public IP on Port 7860
+# Otherwise uncomment this to allow access to the VM Public IP on Port 7860, http://<VM_PLUBLIC_IP>:7860
 # resource "google_compute_firewall" "rules" {
 #   project     =  var.project
 #   name        = "fastchat-firewall"
