@@ -32,11 +32,12 @@ You may need to change the appropriate IAM settings as described here: https://c
 1. **Wait ~10 minutes** for the Recipe to download/install FastChat and the LLM model before continuing
 2. SSH into newly created GCP VM
 3. **Run `source /usr/local/bin/run_demo.sh`**
-4. On your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
+3.5 If you did not choose to open a port, your app will be proxied through gradio. You will see a public link which you can navigate to.
+4. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
 
 --- KNOWN ISSUE ---
 
-This may fail. In this case, run
+The demo may initially fail. In this case, run
 
 `pip install gradio==3.10`
 
