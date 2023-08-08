@@ -25,6 +25,7 @@ Allowed Types
 - **General Purpose:** N2-HighCPU: n2-highcpu-2, n2-highcpu-4, n2-highcpu-8, n2-highcpu-16, n2-highcpu-32, n2-highcpu-48, n2-highcpu-64, n2-highcpu-80, n2-highcpu-96
 - **General Purpose:** C3-Standard:
 c3-standard-4, c3-standard-8, c3-standard-22, c3-standard-44, c3-standard-88, c3-standard-176
+- **General Purpose with Local SSD:** C3-Standard-LSSD: c3-standard-4-lssd, c3-standard-8-lssd, c3-standard-22-lssd, c3-standard-44-lssd, c3-standard-88-lssd, c3-standard-176-lssd
 - **Compute Optimized:** C3-HighCPU: c3-highcpu-4, c3-highcpu-8, c3-highcpu-22, c3-highcpu-44, c3-highcpu-88, c3-highcpu-176
 - **Memory Optimized:** c3-HighMem: c3-highmem-4, c3-highmem-8, c3-highmem-22, c3-highmem-44, c3-highmem-88, c3-highmem-176
 - **Memory Optimized:** m3-UltraMem, m3-Ultramem-32, m3-ultramem-64, m3-ultramem-128, m3-megamem-64, m3-megamem-128
