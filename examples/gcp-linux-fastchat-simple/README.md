@@ -36,7 +36,7 @@ You may need to change the appropriate IAM settings as described here: https://c
 5. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
 
 <p align="center">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Intel Logo" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Gradio_Output" width="250"/>
 </p>
 
 
