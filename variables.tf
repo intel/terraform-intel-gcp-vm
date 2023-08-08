@@ -10,7 +10,7 @@
 #General Purpose with Local SSD: C3-Standard-LSSD: c3-standard-4-lssd, c3-standard-8-lssd, c3-standard-22-lssd, c3-standard-44-lssd, c3-standard-88-lssd, c3-standard-176-lssd
 #Compute Optimized: C3-HighCPU: c3-highcpu-4, c3-highcpu-8, c3-highcpu-22, c3-highcpu-44, c3-highcpu-88, c3-highcpu-176
 #Memory Optimized: c3-HighMem: c3-highmem-4, c3-highmem-8, c3-highmem-22, c3-highmem-44, c3-highmem-88, c3-highmem-176
-#Memory Optimized: m3-UltraMem, m3-Ultramem-32, m3-ultramem-64, m3-ultramem-128, m3-megamem-64, m3-megamem-128
+#Memory Optimized: m3-UltraMem, m3-ultramem-32, m3-ultramem-64, m3-ultramem-128, m3-megamem-64, m3-megamem-128
 
 #"minCpuPlatform": Intel Cascade Lake, Intel Ice Lake, Intel Sapphire Rapids
 # as of May 23, 2023 C3 is available in us-east1-b, us-east1-c, us-east1-d, us-east4-c, us-east4-b, us-east4-a, us-central1-c, us-central1-a, us-central1-b, europe-west4-a, europe-west4-b, europe-west4-c, europe-west1-b, europe-west1-d, europe-west1-c, asia-southeast1-b, asia-southeast1-a, asia-southeast1-c
