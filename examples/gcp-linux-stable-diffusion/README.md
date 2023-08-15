@@ -1,0 +1,45 @@
+<p align="center">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
+</p>
+
+# Intel Cloud Optimization Modules for Terraform
+
+© Copyright 2023, Intel Corporation
+
+## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Cloud Optimized Recipe for FastChat
+
+This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xeon Scalable Processors on GCP.
+
+## Usage
+
+You may need to change the appropriate IAM settings as described here: https://cloud.google.com/docs/terraform/get-started-with-terraform 
+
+1. Log on to CGP Portal
+2. Enter the GCP Cloud Shell (terminal button on top right of page)
+3. Run the following commands in order: 
+
+`git clone https://github.com/intel/terraform-intel-gcp-vm.git`
+
+`cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple` 
+
+`terraform init` 
+
+`terraform apply`
+
+## Running the Demo
+
+
+1. **Wait ~5-10 minutes** for the Recipe to download/install the Stable Diffusion model before continuing
+2. Find the public IP of your VM. You can get this from the "Compute Engine" section of the GCP console. or from the terraform output.
+3. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:9000**.
+
+<p align="center">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Gradio_Output" width="250"/>
+</p>
+
+## Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
+
+1. Google Cloud CLI: https://cloud.google.com/sdk/docs/install
+2. CGP account access configured: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference.html#running-terraform-on-your-workstation
+3. Terraform: https://learn.hashicorp.com/tutorials/terraform/install-cli
+4. Git: https://git-scm.com/book/en/v2/Getting-Started-Installing-Git
