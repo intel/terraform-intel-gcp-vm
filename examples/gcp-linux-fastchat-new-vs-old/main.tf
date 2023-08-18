@@ -12,7 +12,7 @@ module "linux_vm" {
   boot_image_family   = "ubuntu-2204-lts"
   name                = "spr-intel-fastchat-vm"
   zone                = "us-central1-a"
-  machine_type        = "c3-highmem-22"  
+  machine_type        = "c3-standard-22"  
   tags                = ["fschat"]
   user_data           = templatefile("./cloud_init.yml", {})
   access_config = [{
@@ -22,6 +22,7 @@ module "linux_vm" {
   }, ]
 }
 
+#GCP Linux VM with Intel Cloud Optimized Recipe for FastChat
 module "linux_vm2" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
