@@ -2,7 +2,7 @@
   <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
-# Intel® Cloud Optimization Modules for Terraform
+## Intel® Cloud Optimization Modules for Terraform
 
 © Copyright 2023, Intel Corporation
 
@@ -163,6 +163,7 @@ module "linux_vm" {
 Run Terraform
 
 ```hcl
+
 terraform init  
 terraform plan
 terraform apply -var="project=<your_your_gcp_project_id>"
