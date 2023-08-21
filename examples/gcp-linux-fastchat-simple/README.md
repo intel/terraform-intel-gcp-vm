@@ -14,7 +14,7 @@ This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xe
 
 You may need to change the appropriate IAM settings as described here: https://cloud.google.com/docs/terraform/get-started-with-terraform 
 
-1. Log on to CGP Portal
+1. Log on to GCP Portal
 2. Enter the GCP Cloud Shell (terminal button on top right of page)
 3. Run the following commands in order: 
 
