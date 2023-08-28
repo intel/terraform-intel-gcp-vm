@@ -20,7 +20,7 @@ You may need to change the appropriate IAM settings as described here: https://c
 
 `git clone https://github.com/intel/terraform-intel-gcp-vm.git`
 
-`cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple` 
+`cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-new-vs-old` 
 
 `terraform init` 
 
