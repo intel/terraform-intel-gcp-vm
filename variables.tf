@@ -79,7 +79,7 @@ variable "subnetwork_project" {
 variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
-  default     = ""
+  default     = "intel-csa-resource-GCP"
 }
 
 variable "service_account" {
@@ -98,7 +98,7 @@ variable "service_account" {
 variable "boot_image_family" {
   type        = string
   description = "The image from which to initialize this disk"
-  default     = "ubuntu-2204-lts"
+  default     = "rhel-8"
 }
 
 variable "boot_disk_size" {
@@ -109,20 +109,20 @@ variable "boot_disk_size" {
 
 variable "boot_disk_type" {
   type        = string
-  description = "Disk type associated with the OS disk"
+  description = "Disk type associated with the OS disk. Values can be either pd-ssd, local-ssd, or pd-standard"
   default     = "pd-ssd"
 }
 
 variable "boot_image_project" {
   type        = string
   description = "The ID of the project in which the source image resides."
-  default     = "ubuntu-os-cloud"
+  default     = "rhel-cloud"
 }
 
 variable "zone" {
   type        = string
   description = "The zone that the machine should be created in. If it is not provided, the provider zone is used."
-  default     = null
+  default     = "us-east1-b"
 }
 
 variable "can_ip_forward" {
@@ -284,7 +284,7 @@ variable "visible_core_count" {
   default     = null
 }
 
-variable user_data {
+variable "user_data" {
   type        = string
   description = "User data to be placed on the instance. Used to place cloud-init on VMs"
   default     = null

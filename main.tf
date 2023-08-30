@@ -7,7 +7,7 @@
 # Intel CPU, we are not populating the min CPU platform. We are using the default CPU platform that GCP will provide for these older generation of instances
 
 locals {
-  machine_type_regex = "^([cemn][123u])"
+  #machine_type_regex = "^([cemn][123u])"
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
@@ -19,7 +19,7 @@ locals {
     "e2": null
     "cu": null
   }
-  min_cpu_platform = lookup(local.machine_types,one(regex(local.machine_type_regex, var.machine_type)),null)
+  #min_cpu_platform = lookup(local.machine_types,one(regex(local.machine_type_regex, var.machine_type)),null)
 }
 
 data "google_compute_image" "image" {
@@ -84,7 +84,7 @@ resource "google_compute_instance" "instance" {
   }
 
   # CPU platform and GPU options
-  min_cpu_platform = local.min_cpu_platform
+  #min_cpu_platform = local.min_cpu_platform
 
   # Boot disk options
   deletion_protection = var.deletion_protection
