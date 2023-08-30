@@ -6,15 +6,13 @@
 
 © Copyright 2022, Intel Corporation
 
-## Intel GCP VM on default network
+## Intel Red Hat Enterprise Linux GCP VM Example
 
-This module creates a Linux VM on the default network.  Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
+This module creates a Red Hat Enterprise Linux (RHEL) VM on the Intel Sapphire Rapids CPU. The virtual machine is created on an Intel Sapphire Rapids c3-standard-4 by default.
 
-Where to find the list of publicly available images for compute engine: https://cloud.google.com/compute/docs/images
+Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM".
 
-OR 
-
-run gcloud compute images list --project gce-uefi-images to see the name, project, family and status easily in the CLI
+For the list of publicly available images for compute engines see https://cloud.google.com/compute/docs/images OR run gcloud compute images list --project gce-uefi-images to see the name, project, family and status easily in the CLI
 
 ## Usage
 
@@ -33,11 +31,12 @@ main.tf
 ```hcl
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 
-module "linux_vm" {
+module "rhel_vm" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
-  boot_image_family   = "ubuntu-2204-lts"
-  name                = "this-is-a-linux-vm"
+  boot_image_family   = "rhel-8"
+  boot_image_project  = "rhel-cloud"
+  name                = "vm1"
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null

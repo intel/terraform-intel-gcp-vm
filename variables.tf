@@ -79,9 +79,8 @@ variable "subnetwork_project" {
 variable "project" {
   type        = string
   description = "The ID of the project in which the resource resides."
-  default     = "intel-csa-resource-GCP"
+  default     = ""
 }
-
 variable "service_account" {
   type = object({
     service_email = optional(string, null)
@@ -98,7 +97,7 @@ variable "service_account" {
 variable "boot_image_family" {
   type        = string
   description = "The image from which to initialize this disk"
-  default     = "rhel-8"
+  default     = "ubuntu-2204-lts"
 }
 
 variable "boot_disk_size" {
@@ -116,13 +115,12 @@ variable "boot_disk_type" {
 variable "boot_image_project" {
   type        = string
   description = "The ID of the project in which the source image resides."
-  default     = "rhel-cloud"
+  default     = "ubuntu-os-cloud"
 }
-
 variable "zone" {
   type        = string
   description = "The zone that the machine should be created in. If it is not provided, the provider zone is used."
-  default     = "us-east1-b"
+  default     = null
 }
 
 variable "can_ip_forward" {

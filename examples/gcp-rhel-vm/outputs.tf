@@ -1,48 +1,27 @@
-# output "cpu_platform" {
-#   value       = module.linux_vm.cpu_platform
-#   description = "The CPU platform of the VM instance"
-# }
+output "name" {
+  value       = module.rhel_vm.cpu_platform
+  description = "A unique name for the resource, required by GCE. Changing this forces a new resource to be created."
+}
 
-# output "current_status" {
-#   value       = module.linux_vm.current_status
-#   description = "Current status of the VM instance"
-# }
+output "instance_id" {
+  value       = module.rhel_vm.instance_id
+  description = "The server-assigned unique identifier of this instance"
+}
 
-# output "id" {
-#   value       = module.linux_vm.id
-#   description = "An identifier for the resource"
-# }
+output "boot_disk_family" {
+  value       = module.rhel_vm.boot_disk_size
+  description = "The image from which to initialize this disk"
+}
 
-# output "instance_id" {
-#   value       = module.linux_vm.instance_id
-#   description = "The server-assigned unique identifier of this instance"
-# }
+output "boot_disk_project" {
+  value       = module.rhel_vm.boot_disk_size
+  description = "The ID of the project in which the source image resides."
+}
 
-# output "machine_type" {
-#   value       = module.linux_vm.machine_type
-#   description = "Type of the machine created"
-# }
-
-# output "min_cpu_platform" {
-#   value       = module.linux_vm.min_cpu_platform
-#   description = "Minimum CPU platform for the VM instance"
-# }
-
-# output "name" {
-#   value       = module.linux_vm.name
-#   description = "Unique name of the instance created"
-# }
-
-# output "self_link" {
-#   value       = module.linux_vm.self_link
-#   description = "The URI of the created resource"
-# }
-
-# output "boot_disk_size" {
-#   value       = module.linux_vm.boot_disk_size
-#   description = "Size of the boot disk of the instance"
-# }
-
+output "tags" {
+  value       = module.rhel_vm.machine_type
+  description = "A list of network tags to attach to the instance"
+}
 
 
 
