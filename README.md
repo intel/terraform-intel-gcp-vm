@@ -181,14 +181,14 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.0 |
-| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.50 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.2 |
+| <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.79 |
 
 ## Providers
 
 | Name | Version |
 |------|---------|
-| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.50 |
+| <a name="provider_google"></a> [google](#provider\_google) | ~> 4.79 |
 
 ## Modules
 
@@ -214,7 +214,7 @@ No modules.
 | <a name="input_boot_disk_mode"></a> [boot\_disk\_mode](#input\_boot\_disk\_mode) | The mode in which to attach this disk, either READ\_WRITE or READ\_ONLY. | `string` | `"READ_WRITE"` | no |
 | <a name="input_boot_disk_size"></a> [boot\_disk\_size](#input\_boot\_disk\_size) | Size of the OS disk | `number` | `100` | no |
 | <a name="input_boot_disk_source"></a> [boot\_disk\_source](#input\_boot\_disk\_source) | The name or self\_link of the existing disk (such as those managed by google\_compute\_disk) or disk image. | `string` | `null` | no |
-| <a name="input_boot_disk_type"></a> [boot\_disk\_type](#input\_boot\_disk\_type) | Disk type associated with the OS disk | `string` | `"pd-ssd"` | no |
+| <a name="input_boot_disk_type"></a> [boot\_disk\_type](#input\_boot\_disk\_type) | Disk type associated with the OS disk. Values can be either pd-ssd, local-ssd, or pd-standard | `string` | `"pd-ssd"` | no |
 | <a name="input_boot_image_family"></a> [boot\_image\_family](#input\_boot\_image\_family) | The image from which to initialize this disk | `string` | `"ubuntu-2204-lts"` | no |
 | <a name="input_boot_image_project"></a> [boot\_image\_project](#input\_boot\_image\_project) | The ID of the project in which the source image resides. | `string` | `"ubuntu-os-cloud"` | no |
 | <a name="input_can_ip_forward"></a> [can\_ip\_forward](#input\_can\_ip\_forward) | Conditional that allows sending and receiving of packets with non-matching source or destination IPs. | `bool` | `false` | no |

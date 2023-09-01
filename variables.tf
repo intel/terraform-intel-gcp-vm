@@ -81,7 +81,6 @@ variable "project" {
   description = "The ID of the project in which the resource resides."
   default     = ""
 }
-
 variable "service_account" {
   type = object({
     service_email = optional(string, null)
@@ -109,7 +108,7 @@ variable "boot_disk_size" {
 
 variable "boot_disk_type" {
   type        = string
-  description = "Disk type associated with the OS disk"
+  description = "Disk type associated with the OS disk. Values can be either pd-ssd, local-ssd, or pd-standard"
   default     = "pd-ssd"
 }
 
@@ -118,7 +117,6 @@ variable "boot_image_project" {
   description = "The ID of the project in which the source image resides."
   default     = "ubuntu-os-cloud"
 }
-
 variable "zone" {
   type        = string
   description = "The zone that the machine should be created in. If it is not provided, the provider zone is used."
@@ -284,7 +282,7 @@ variable "visible_core_count" {
   default     = null
 }
 
-variable user_data {
+variable "user_data" {
   type        = string
   description = "User data to be placed on the instance. Used to place cloud-init on VMs"
   default     = null
