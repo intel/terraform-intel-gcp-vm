@@ -53,7 +53,7 @@ module "linux_vm_worker" {
   }, ]
 }
 
-resource "google_compute_firewall" "rules" {
+resource "google_compute_firewall" "rules-1" {
   project     =  var.project
   name        = "fastchat-firewall"
   network     = "default"
@@ -69,7 +69,7 @@ resource "google_compute_firewall" "rules" {
 }
 
 # Port 7860 is required to access the FastChat Webserver without proxying through gradio. Disabled by default.
-resource "google_compute_firewall" "rules" {
+resource "google_compute_firewall" "rules-2" {
   project     =  var.project
   name        = "fastchat-firewall-public-access"
   network     = "default"
