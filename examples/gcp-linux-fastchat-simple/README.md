@@ -6,53 +6,38 @@
 
 © Copyright 2023, Intel Corporation
 
-## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Cloud Optimized Recipe for FastChat
+## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Optimized Cloud Recipe for FastChat
 
 This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xeon Scalable Processors on GCP.
 
 ## Usage
 
-You may need to change the appropriate IAM settings as described here: https://cloud.google.com/docs/terraform/get-started-with-terraform 
-
 1. Log on to GCP Portal
 2. Enter the GCP Cloud Shell (terminal button on top right of page)
 3. Run the following commands in order: 
 
-`git clone https://github.com/intel/terraform-intel-gcp-vm.git`
 
-`cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple` 
+```bash
+git clone https://github.com/intel/terraform-intel-gcp-vm.git
+cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple
+terraform init 
+terraform apply
 
-`terraform init` 
-
-`terraform apply`
+```
 
 ## Running the Demo
-
 
 1. **Wait ~10 minutes** for the Recipe to download/install FastChat and the LLM model before continuing
 2. SSH into newly created GCP VM
 3. **Run `source /usr/local/bin/run_demo.sh`**
-4. If you did not choose to open a port, your app will be proxied through gradio. See https://xxxxxxx.gradio.live URL that is generated during the gradio run.
-5. Otherwise, if you choose to open port 7860 in main.tf: on your computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the GCP console.
+4. On your local computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the VM in the GCP console.
+5. Or use the https://xxxxxxx.gradio.live URL that is generated during the demo startup(see on screen logs)
 
 <p align="center">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Gradio_Output" width="250"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Gradio_Output" width="900"/>
 </p>
 
-
---- KNOWN ISSUE ---
-
-The demo may initially fail. In this case, run
-
-`pip install gradio==3.10`
-
-`pip install gradio==3.35.2`
-
-Then, run:
-
-`source /usr/local/bin/run_demo.sh` 
-
-And navigate again using your browser.
+Note: You may need permissions to run Terraform https://cloud.google.com/docs/terraform/get-started-with-terraform 
 
 ## Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
 
