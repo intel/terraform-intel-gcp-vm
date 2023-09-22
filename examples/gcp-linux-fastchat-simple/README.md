@@ -23,6 +23,8 @@ cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple
 terraform init 
 terraform apply
 
+# (enter your GCP project ID and "yes" to confirm)
+
 ```
 
 ## Running the Demo
