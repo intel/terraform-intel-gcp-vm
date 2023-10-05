@@ -14,7 +14,7 @@ module "linux_vm" {
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "lucas-intel-diffusion-${random_id.rid.dec}"
+  name                = "intel-diffusion-${random_id.rid.dec}"
   zone                = "us-central1-a"
   machine_type        = "c3-standard-44"
   #machine_type        = "n2-standard-32"
