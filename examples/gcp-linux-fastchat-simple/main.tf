@@ -32,7 +32,7 @@ resource "google_compute_firewall" "rules" {
   name        = "fastchat-firewall-${random_id.rid.dec}"
   network     = "default"
   description = "Allows access to FastChat Webserver."
-
+  
   allow {
     protocol  = "tcp"
     ports     = ["22", "5000", "5001", "7860"]

@@ -34,11 +34,6 @@ terraform apply
 3. **Run `source /usr/local/bin/run_demo.sh`**
 4. On your local computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the VM in the GCP console.
 
-
-<p align="center">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/gradio.png?raw=true" alt="Gradio_Output" width="900"/>
-</p>
-
 Note: You may need permissions to run Terraform https://cloud.google.com/docs/terraform/get-started-with-terraform 
 
 ## Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
