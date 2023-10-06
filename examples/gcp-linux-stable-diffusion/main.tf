@@ -14,11 +14,12 @@ module "linux_vm" {
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "intel-fastchat-${random_id.rid.dec}"
+  name                = "intel-diffusion-${random_id.rid.dec}"
   zone                = "us-central1-a"
-  machine_type        = "c3-standard-22"
+  machine_type        = "c3-standard-44"
+  #machine_type        = "n2-standard-32"
   allow_stopping_for_update = true	  
-  tags                = ["fschat-${random_id.rid.dec}"]
+  tags                = ["diffusion-${random_id.rid.dec}"]
   user_data           = templatefile("./cloud_init.yml", {})
   access_config = [{
     nat_ip                 = null
@@ -29,14 +30,14 @@ module "linux_vm" {
 
 resource "google_compute_firewall" "rules" {
   project     =  var.project
-  name        = "fastchat-firewall-${random_id.rid.dec}"
+  name        = "diffusion-firewall-${random_id.rid.dec}"
   network     = "default"
-  description = "Allows access to FastChat Webserver."
-  
+  description = "Allows access to Stable Diffusion"
+
   allow {
     protocol  = "tcp"
     ports     = ["22", "5000", "5001", "7860"]
   }
   source_ranges = [ "0.0.0.0/0" ]
-  target_tags = ["fschat-${random_id.rid.dec}"]
+  target_tags = ["diffusion-${random_id.rid.dec}"]
 }

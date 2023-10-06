@@ -6,9 +6,9 @@
 
 © Copyright 2023, Intel Corporation
 
-## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Optimized Cloud Recipe for FastChat
+## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Optimized Cloud Recipe for Stable Diffusion
 
-This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xeon Scalable Processors on GCP.
+This demo will showcase Stable Diffusion CPU inferencing using 4th Gen Xeon Scalable Processors on GCP.
 
 ## Usage
 
@@ -19,7 +19,7 @@ This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xe
 
 ```bash
 git clone https://github.com/intel/terraform-intel-gcp-vm.git
-cd terraform-intel-gcp-vm/examples/gcp-linux-fastchat-simple
+cd terraform-intel-gcp-vm/examples/gcp-linux-stable-diffusion
 terraform init 
 terraform apply
 
@@ -27,16 +27,24 @@ terraform apply
 
 ```
 
-## Running the Demo
+## Run the Stable Diffusion Intel® OpenVino Optimized Demo
 
-1. **Wait ~10 minutes** for the Recipe to download/install FastChat and the LLM model before continuing
-2. SSH into newly created GCP VM
-3. **Run `source /usr/local/bin/run_demo.sh`**
-4. On your local computer, open a browser and navigate to **http://<VM_PLUBLIC_IP>:7860**. Get your Public IP from the "Compute Engine" section of the VM in the GCP console.
+**NOTE - Wait ~5 minutes for the software to install**
+
+**1-SSH into newly created GCP VM and run `source /usr/local/bin/run_demo.sh`**
+
+**2-On your computer open a browser and navigate to http://<VM_PLUBLIC_IP>:5000**
+
+## OPTIONAL - Run the default stock Stable Diffusion demo (not optimized)
+
+**1-SSH into VM and run `source /usr/local/bin/not_optimized_run_demo.sh`**
+
+**2-Browse to port 5001 instead http://<VM_PLUBLIC_IP>:5001**
+
 
 Note: You may need permissions to run Terraform https://cloud.google.com/docs/terraform/get-started-with-terraform 
 
-## Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
+### Pre-requisites for running on a Workstation (bypass if using GCP Cloud Shell)
 
 1. Google Cloud CLI: https://cloud.google.com/sdk/docs/install
 2. CGP account access configured: https://registry.terraform.io/providers/hashicorp/google/latest/docs/guides/provider_reference.html#running-terraform-on-your-workstation
