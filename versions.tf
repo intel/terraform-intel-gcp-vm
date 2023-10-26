@@ -1,5 +1,5 @@
 terraform {
-  required_version = "~> 1.5.2" # see https://releases.hashicorp.com/terraform/
+  required_version = ">= 1.5" # see https://releases.hashicorp.com/terraform/
 
   required_providers {
     google = {
