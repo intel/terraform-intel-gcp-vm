@@ -2,18 +2,17 @@
   <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/logo-classicblue-800px.png?raw=true" alt="Intel Logo" width="250"/>
 </p>
 
-# Intel Cloud Optimization Modules for Terraform
+## Intel Cloud Optimization Modules for Terraform
 
 © Copyright 2023, Intel Corporation
 
-## Intel GCP Linux VM on default network using Intel Cloud Optimzier(ICO) by Densify recommendations
+## Intel GCP Windows VM on default network using Intel Cloud Optimzier(ICO) by Densify recommendations
  
 <p align="center">
   <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/azure-vm-ico.png?raw=true" alt="Intel + Densify Logo" width="250"/>
 </p>
 
-
-This module creates a Linux VM on the default network named "ico-test" from sizing values in the densify_recommendations map. 
+This module creates a Windows VM on the default network named "ico-test" from sizing values in the densify_recommendations map. 
 Using this example requires a "densify_recommndations.auto.tfvars" file. You are expected to generate this file so this is a sample file only. 
 The sample densify_recommendations map found in this directory is in the same format that Densify would provide. 
 
@@ -21,7 +20,7 @@ Intel® Cloud Optimizer is a collaboration between Densify and Intel targeted at
 Intel Cloud Optimizer by Densify helps customers optimize their cloud investments and ensure optimal performance for every workload.
 Intel Cloud Optimizer by Densify is a commercial product. With Intel® Cloud Optimizer, Intel funds the use of Densify for qualifying enterprises for 12 months. For full details of the Intel Cloud Optimizer by Densify offer please see: [INTEL CLOUD OPTIMIZER by DENSIFY](https://www.densify.com/product/intel/)
 
-Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
+Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM" 
 
 ## Usage
 
@@ -69,13 +68,10 @@ variable "densify_fallback"{
 	reservedInstanceCoverage = "no"
   }
 }
-
 ```
 
 main.tf
 ```hcl
-# You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
-
 # ICO by Densify module
 module "densify" {
   source  = "densify-dev/optimization-as-code/null"
@@ -85,13 +81,12 @@ module "densify" {
   densify_unique_id = var.name
 }
 
-# Intel module
-# Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
-module "linux_vm" {
+module "windows_vm" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
-  boot_image_family   = "ubuntu-2204-lts"
+  boot_image_family   = "windows-2019-core"
+  boot_image_project  = "windows-cloud"
   name                = var.name
   access_config = [{
     nat_ip                 = null
@@ -104,23 +99,21 @@ module "linux_vm" {
 
   # ICO by Densify - new self-optimizing instance type from Densify
   machine_type = module.densify.instance_type
-  
- }
+
+}
 ```
-
-
 
 Run Terraform
 
 ```hcl
 terraform init  
 terraform plan
-terraform apply -var="project=<your_your_gcp_project_id>" 
+terraform apply -var="project=<your_your_gcp_project_id>"
 ```
 
 ## Considerations
 Add additional considerations here:
-- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Linux-VM"
-- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
+- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Windows-VM"
+- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Windows-VM"
 - The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
 of your choice
