@@ -181,7 +181,7 @@ Note that this example may create resources. Run `terraform destroy` when you do
 
 | Name | Version |
 |------|---------|
-| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | ~> 1.5.2 |
+| <a name="requirement_terraform"></a> [terraform](#requirement\_terraform) | >= 1.6 |
 | <a name="requirement_google"></a> [google](#requirement\_google) | ~> 4.79 |
 
 ## Providers
