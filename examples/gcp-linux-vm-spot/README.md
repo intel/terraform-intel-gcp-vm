@@ -55,5 +55,4 @@ terraform apply -var="project=<your_your_gcp_project_id>"
 Add additional considerations here:
 - The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Linux-VM-Spot"
 - Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM-Spot"
-- The Spot VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
-of your choice
+- The Spot VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone of your choice

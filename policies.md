@@ -12,7 +12,7 @@ This file documents the HashiCorp Sentinel policies that apply to this module
 
 ## Policy 1
 
-Description: The configured "machine_type" should be an Intel Xeon 3rd Generation(code-named Ice Lake) Scalable processors or an Intel Xeon 4th Generation(code-named Sapphire Rapids) Scalable processors. For c2-standard-* machine types, we have made an exception to include Intel 2nd Gen Xeon (code-named Cascade), since it is not available on Icelake platform
+Description: The configured "machine_type" should be an Intel Xeon 3rd Generation(code-named Ice Lake) Scalable processors or an Intel Xeon 4th Generation(code-named Sapphire Rapids) Scalable processors.
 
 Resource type: google_compute_instance
 
@@ -26,9 +26,10 @@ Allowed Types
 - **General Purpose:** C3-Standard:
 c3-standard-4, c3-standard-8, c3-standard-22, c3-standard-44, c3-standard-88, c3-standard-176
 - **General Purpose with Local SSD:** C3-Standard-LSSD: c3-standard-4-lssd, c3-standard-8-lssd, c3-standard-22-lssd, c3-standard-44-lssd, c3-standard-88-lssd, c3-standard-176-lssd
-- **Compute Optimized:** C3-HighCPU: c3-highcpu-4, c3-highcpu-8, c3-highcpu-22, c3-highcpu-44, c3-highcpu-88, c3-highcpu-176
-- **Memory Optimized:** c3-HighMem: c3-highmem-4, c3-highmem-8, c3-highmem-22, c3-highmem-44, c3-highmem-88, c3-highmem-176
+- **General Purpose:** C3-HighCPU: c3-highcpu-4, c3-highcpu-8, c3-highcpu-22, c3-highcpu-44, c3-highcpu-88, c3-highcpu-176
+- **General Purpose:** c3-HighMem: c3-highmem-4, c3-highmem-8, c3-highmem-22, c3-highmem-44, c3-highmem-88, c3-highmem-176
 - **Memory Optimized:** m3-UltraMem: m3-ultramem-32, m3-ultramem-64, m3-ultramem-128, m3-megamem-64, m3-megamem-128
+- **Compute Optimized:** h3-Standard: h3-standard-88
 
 ## Policy 2
 

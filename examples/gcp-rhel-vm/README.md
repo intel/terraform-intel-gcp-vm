@@ -10,7 +10,7 @@
 
 This module creates a Red Hat Enterprise Linux (RHEL) VM on the Intel Sapphire Rapids CPU. The virtual machine is created on an Intel Sapphire Rapids c3-standard-4 by default.
 
-Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM".
+Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-RHEL-VM".
 
 For the list of publicly available images for compute engines see https://cloud.google.com/compute/docs/images OR run gcloud compute images list --project gce-uefi-images to see the name, project, family and status easily in the CLI
 
@@ -57,7 +57,6 @@ terraform apply -var="project=<your_your_gcp_project_id>"
 
 ## Considerations
 Add additional considerations here:
-- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Linux-VM"
-- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
-- The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
-of your choice
+- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-RHEL-VM"
+- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-RHEL-VM"
+- The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone of your choice
