@@ -20,7 +20,7 @@ Intel® Cloud Optimizer is a collaboration between Densify and Intel targeted at
 Intel Cloud Optimizer by Densify helps customers optimize their cloud investments and ensure optimal performance for every workload.
 Intel Cloud Optimizer by Densify is a commercial product. With Intel® Cloud Optimizer, Intel funds the use of Densify for qualifying enterprises for 12 months. For full details of the Intel Cloud Optimizer by Densify offer please see: [INTEL CLOUD OPTIMIZER by DENSIFY](https://www.densify.com/product/intel/)
 
-Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM" 
+Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Windows-VM-ICO-by-Densify" 
 
 ## Usage
 
@@ -113,7 +113,6 @@ terraform apply -var="project=<your_your_gcp_project_id>"
 
 ## Considerations
 Add additional considerations here:
-- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Windows-VM"
-- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Windows-VM"
-- The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone
-of your choice
+- The GCP zone can be updated in the providers.tf file under this example folder for "GCP-Windows-VM-ICO-by-Densify"
+- Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Windows-VM-ICO-by-Densify"
+- The VM is created using the default network in the GCP zone configured in the providers.tf file. Please make sure you have a default network in the GCP zone of your choice
