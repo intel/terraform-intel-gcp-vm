@@ -12,7 +12,9 @@ module "linux_vm" {
   #source              = "intel/gcp-vm/intel"
   source              = "../../"
   project             = var.project
+  machine_type        = var.machine_type
   boot_image_family   = "ubuntu-2204-lts"
+  
   name                = "emr-vm-test01"
   access_config = [{
     nat_ip                 = null

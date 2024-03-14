@@ -19,7 +19,7 @@
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
-  default     = "n4-standard-4"
+  default     = "c3-standard-4"
 }
 
 ########################
@@ -108,8 +108,13 @@ variable "boot_disk_size" {
 
 variable "boot_disk_type" {
   type        = string
-  description = "Disk type associated with the OS disk. Values can be either pd-ssd, local-ssd, or pd-standard"
-  default     = "pd-ssd"
+  description = "Disk type associated with the OS disk."
+  #There are several disk types and the values can be:
+  # pd-ssd = pd-ssd stands for "Persistent Disk - Solid State Drive"
+  # local-ssd = Local SSD (Solid State Drive) temporary storage
+  # pd-standard = Standard Hard Disk Drive (HDD)
+  # hyperdisk-balanced persistent disk designed to offer a balanced combination of performance, durability, and cost-effectiveness
+  default     = "hyperdisk-balanced"
 }
 
 variable "boot_image_project" {
