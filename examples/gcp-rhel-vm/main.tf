@@ -9,7 +9,8 @@
 # Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 module "rhel_vm" {
-  source             = "intel/gcp-vm/intel"
+  #source             = "intel/gcp-vm/intel"
+  source             = "../../"
   project            = var.project
   boot_image_family  = "rhel-8"
   boot_image_project = "rhel-cloud"

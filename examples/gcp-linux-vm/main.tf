@@ -9,10 +9,11 @@
 # Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 module "linux_vm" {
-  source              = "intel/gcp-vm/intel"
+  #source              = "intel/gcp-vm/intel"
+  source              = "../../"
   project             = var.project
   boot_image_family   = "ubuntu-2204-lts"
-  name                = "spr-vm-20"
+  name                = "emr-vm-test01"
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null

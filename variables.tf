@@ -19,7 +19,7 @@
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
-  default     = "c3-standard-4"
+  default     = "n4-standard-4"
 }
 
 ########################

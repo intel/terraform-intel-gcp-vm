@@ -11,6 +11,7 @@ locals {
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
+    "n4": "Intel Emerald Rapids",
     "m3": "Intel Ice Lake",
     "c2": "Intel Cascade Lake"
     "n1": null

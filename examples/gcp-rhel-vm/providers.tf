@@ -1,3 +1,3 @@
 provider "google" {
-  zone = "us-central1-a"
+  zone = "us-east4-c"
 }
