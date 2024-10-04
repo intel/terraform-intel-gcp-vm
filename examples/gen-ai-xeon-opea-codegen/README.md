@@ -8,7 +8,7 @@
 
 ## GCP C4 Instance with 5th Generation Intel® Xeon® Scalable Processor (Emerald Rapids) & Open Platform for Enterprise AI (OPEA) Code Generation Example
 
-This demo will showcase Code Generation CPU inference using 5th Gen Xeon Scalable Processors on GCP using the OPEA CodeGen Example. For more information about OPEA, go [here](https://opea.dev/). For more information on this specific example, go [here](https://github.com/opea-project/GenAIExamples/tree/main/CodeGen).
+This demo will showcase Code Generation CPU inference using 5th Gen Xeon Scalable Processors on GCP using the OPEA CodeGen Example. For more information about OPEA, go [here](https://opea.dev/). For more information on this specific example, go [here](https://github.com/opea-project/GenAIExamples/tree/main/CodeGen)
 
 ## Usage
 
@@ -52,7 +52,7 @@ After the Terraform module successfully creates the GCP VM instance, **wait ~15 
 You can access the demos using the following:
 
 - OPEA CodeGen: `http://yourpublicip:5174`
-- Additional Instructions on how to setup VScode CodeGen integration can be found [here](https://github.com/opea-project/GenAIExamples/blob/main/CodeGen/docker_compose/intel/cpu/xeon/README.md#install-copilot-vscode-extension-from-plugin-marketplace-as-the-frontend
+- Additional Instructions on how to setup VScode CodeGen integration can be found [**here**](https://github.com/opea-project/GenAIExamples/blob/main/CodeGen/docker_compose/intel/cpu/xeon/README.md#install-copilot-vscode-extension-from-plugin-marketplace-as-the-frontend)
 
 
 ## Deleting the Demo
