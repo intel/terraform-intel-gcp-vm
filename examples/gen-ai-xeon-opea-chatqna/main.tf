@@ -5,15 +5,15 @@ resource "random_id" "rid" {
 
 #GCP Linux VM with Intel OPEA ChatQnA 
 module "linux_vm" {
-  source                    = "../.." #intel/gcp-vm/intel
+  source                    = "intel/gcp-vm/intel"
   project                   = var.project
   boot_image_project        = "ubuntu-os-cloud"
   boot_image_family         = "ubuntu-2204-lts"
-  name                      = "lmelo-ai-opea-chatqna-${random_id.rid.dec}"
-  zone                      = "us-east4-a" #"us-central1-a"
+  name                      = "ai-opea-chatqna-${random_id.rid.dec}"
+  zone                      = "us-east4-a"
   machine_type              = "c4-highcpu-48"
   allow_stopping_for_update = true
-  tags                      = ["lmelo-ai-opea-chatqna-${random_id.rid.dec}"]
+  tags                      = ["ai-opea-chatqna-${random_id.rid.dec}"]
   user_data = templatefile("./cloud_init.yml", { HUGGINGFACEHUB_API_TOKEN = var.huggingface_token })
   access_config = [{
     nat_ip                 = null
@@ -25,7 +25,7 @@ module "linux_vm" {
 #Required firewall rules
 resource "google_compute_firewall" "rules" {
   project     = var.project
-  name        = "lmelo-ai-opea-chatqna-${random_id.rid.dec}"
+  name        = "ai-opea-chatqna-${random_id.rid.dec}"
   network     = "default"
   description = "Allows access to OPEA AI ChatQnA"
 
@@ -34,5 +34,5 @@ resource "google_compute_firewall" "rules" {
     ports    = ["22","80", "443", "6379", "8001", "6006", "6007", "6000", "7000", "8808", "8000", "8888", "5173", "5174", "9009", "9000"]
   }
   source_ranges = ["0.0.0.0/0"]
-  target_tags   = ["lmelo-ai-opea-chatqna-${random_id.rid.dec}"]
+  target_tags   = ["ai-opea-chatqna-${random_id.rid.dec}"]
 }
