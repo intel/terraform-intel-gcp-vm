@@ -13,14 +13,14 @@
 
 
 locals {
-  machine_type_regex = "^([cemn][123u])"
+  machine_type_regex = "^([cemn][1234u])"
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
     "c2": "Intel Cascade Lake"
-    "n4": "Intel Emerald Rapids"
-    "c4": "Intel Emerald Rapids 
+    "c4": null
+    "n4": null
     "n1": null
     "m1": null
     "m2": null
