@@ -7,12 +7,14 @@
 # Intel CPU, we are not populating the min CPU platform. We are using the default CPU platform that GCP will provide for these older generation of instances
 
 locals {
-  machine_type_regex = "^([cemn][123u])"
+  machine_type_regex = "^([cemn][1234u])"
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
     "c2": "Intel Cascade Lake"
+    "c4": null
+    "n4": null
     "n1": null
     "m1": null
     "m2": null
