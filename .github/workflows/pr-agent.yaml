@@ -1,14 +1,22 @@
-#on:
-#  pull_request:
-#  issue_comment:
-#jobs:
-#  pr_agent_job:
-#    runs-on: ubuntu-20.04
-#    name: Run pr agent on every pull request, respond to user comments
-#    steps:
-#      - name: PR Agent action step
-#        id: pragent
-#        uses: Codium-ai/pr-agent@main
-#        env:
-#          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
-#          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+name: Generate terraform docs
+permissions: read-all
+  
+on:
+  - pull_request
+
+jobs:
+  pr-agent:
+    permissions:
+      actions: write
+      contents: write
+      pull-requests: write
+      issues: write
+    runs-on: ubuntu-20.04
+    name: Run pr agent on every pull request, respond to user comments
+    steps:
+      - name: PR Agent action step
+        id: pragent
+        uses: Codium-ai/pr-agent@main
+        env:
+          OPENAI_KEY: ${{ secrets.OPENAI_KEY }}
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
