@@ -55,6 +55,12 @@ resource "google_compute_instance" "instance" {
     }
   }
 
+ #Required for optional Intel Confidential Compute with TDX
+confidential_instance_config {
+    enable_confidential_compute = var.enable_confidential_compute
+    confidential_instance_type  = var.confidential_instance_type
+  }
+ 
   # Networking
   can_ip_forward = var.can_ip_forward
   network_interface {
