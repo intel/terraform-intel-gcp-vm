@@ -6,7 +6,7 @@ terraform {
       source  = "hashicorp/google"
       #version = "~> 4.79"
       #For GCP Intel TDX Testing
-       version = "~> 6.5.0"
+       version = "~> 6.5"
     }
   }
 }
