@@ -12,7 +12,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 ## Performance Data
 
 #### Find all the information below plus even more by navigating our full library
-#### [INTEL CLOUD PERFROMANCE DATA LIBRARY for GCP](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
+#### [Link to the Intel performance articles for GCP.](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
 
 #
 
@@ -23,7 +23,7 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 <p align="center">
   <a href="https://www.intel.com/content/www/us/en/content-details/834574/process-big-data-faster-and-at-a-better-value-with-google-cloud-n4-vms.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/spark-n4vn2.png.png?raw=true" alt="Link" width="600"/>
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/spark-n4vn2.png?raw=true" alt="Link" width="600"/>
   </a>
 </p>
 
@@ -77,16 +77,6 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 #
 
-#### [AI: Optimize AI Performance and Value with Google Cloud N4 instances enabled by 5th Intel® Xeon® Scalable Processors (Emerald Rapids)](https://www.intel.com/content/www/us/en/content-details/834094/optimize-ai-performance-and-value-with-google-cloud-n4-vms-enabled-by-5th-gen-intel-xeon-scalable-processors.html)
-
-<p align="center">
-  <a href="https://www.intel.com/content/www/us/en/content-details/834094/optimize-ai-performance-and-value-with-google-cloud-n4-vms-enabled-by-5th-gen-intel-xeon-scalable-processors.html">
-  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/ai-n4.png?raw=true" alt="Link" width="600"/>
-  </a>
-</p>
-
-#
-
 #### [Java: Double your Java Server Side Performance with Google Cloud and 5th Gen Intel® Xeon® Scalable Processors](https://www.intel.com/content/www/us/en/content-details/829646/double-your-java-server-side-performance-with-google-cloud-and-5th-gen-intel-xeon-scalable-processors.html)
 
 
@@ -97,6 +87,17 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 </p>
 
 #
+#### [AI: Optimize AI Performance and Value with Google Cloud N4 instances enabled by 5th Intel® Xeon® Scalable Processors (Emerald Rapids)](https://www.intel.com/content/www/us/en/content-details/834094/optimize-ai-performance-and-value-with-google-cloud-n4-vms-enabled-by-5th-gen-intel-xeon-scalable-processors.html)
+
+<p align="center">
+  <a href="https://www.intel.com/content/www/us/en/content-details/834094/optimize-ai-performance-and-value-with-google-cloud-n4-vms-enabled-by-5th-gen-intel-xeon-scalable-processors.html">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/ai-n4.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
+
 
 
 ## Usage
