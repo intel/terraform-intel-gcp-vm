@@ -4,9 +4,7 @@ terraform {
   required_providers {
     google = {
       source  = "hashicorp/google"
-      #version = "~> 4.79"
-      #For GCP Intel TDX Testing
-       version = "~> 6.5"
+      version = "~> 6.5"
     }
   }
 }
