@@ -11,6 +11,19 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 
 ## Performance Data
 
+#### [Maximize performance and optimize spend with Compute Engine’s latest VMs, N4 and C4](https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series)
+
+<p align="center">
+  <a href="https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/c4-perf1.png?raw=true" alt="Link" width="600"/>
+  </a>
+  <a href="https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series">
+  <img src="https://github.com/intel/terraform-intel-gcp-vm/blob/main/images/c4-perf2.png?raw=true" alt="Link" width="600"/>
+  </a>
+</p>
+
+#
+
 #### Find all the information below plus even more by navigating our full library
 #### [Link to the Intel performance articles for GCP.](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
 
