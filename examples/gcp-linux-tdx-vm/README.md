@@ -31,10 +31,15 @@ main.tf
 
 module "linux_vm" {
   source              = "intel/gcp-vm/intel"
-  project             = var.project
-  boot_image_family   = "ubuntu-2204-lts"
-  name                = "this-is-a-linux-vm"
-  access_config = [{
+    project             = var.project
+    name                = "intel-tdx-linux01"
+ 
+ #required for Intel Confidential Compute VM with TDX
+ enable_confidential_compute = var.enable_confidential_compute
+ confidential_instance_type  = var.confidential_instance_type
+ on_host_maintenance = "TERMINATE"
+
+ access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
     network_tier           = "PREMIUM"
