@@ -286,3 +286,13 @@ variable "user_data" {
   description = "User data to be placed on the instance. Used to place cloud-init on VMs"
   default     = null
 }
+
+variable "enable_confidential_compute" {
+  type    = bool
+  default = false
+}
+
+variable "confidential_instance_type" {
+  type    = string
+  default = null
+}

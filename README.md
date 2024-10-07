@@ -266,9 +266,11 @@ No modules.
 | <a name="input_boot_image_family"></a> [boot\_image\_family](#input\_boot\_image\_family) | The image from which to initialize this disk | `string` | `"ubuntu-2204-lts"` | no |
 | <a name="input_boot_image_project"></a> [boot\_image\_project](#input\_boot\_image\_project) | The ID of the project in which the source image resides. | `string` | `"ubuntu-os-cloud"` | no |
 | <a name="input_can_ip_forward"></a> [can\_ip\_forward](#input\_can\_ip\_forward) | Conditional that allows sending and receiving of packets with non-matching source or destination IPs. | `bool` | `false` | no |
+| <a name="input_confidential_instance_type"></a> [confidential\_instance\_type](#input\_confidential\_instance\_type) | n/a | `string` | `null` | no |
 | <a name="input_deletion_protection"></a> [deletion\_protection](#input\_deletion\_protection) | Enable deletion protection on this instance | `bool` | `false` | no |
 | <a name="input_description"></a> [description](#input\_description) | A brief description of this resource | `string` | `"Intel accelerated virtual machine."` | no |
 | <a name="input_desired_status"></a> [desired\_status](#input\_desired\_status) | Desired status of the instance. | `string` | `"RUNNING"` | no |
+| <a name="input_enable_confidential_compute"></a> [enable\_confidential\_compute](#input\_enable\_confidential\_compute) | n/a | `bool` | `false` | no |
 | <a name="input_enable_integrity_monitoring"></a> [enable\_integrity\_monitoring](#input\_enable\_integrity\_monitoring) | Compare the most recent boot measurements to the integrity policy baseline and return a pair of pass/fail results depending on whether they match or not. | `bool` | `true` | no |
 | <a name="input_enable_nested_virtualization"></a> [enable\_nested\_virtualization](#input\_enable\_nested\_virtualization) | Boolean that specifies if nested virtualization should be enabled or disabled on the instance. | `bool` | `false` | no |
 | <a name="input_enable_secure_boot"></a> [enable\_secure\_boot](#input\_enable\_secure\_boot) | Verify the digital signature of all boot components, and halt the boot process if signature verification fails. | `bool` | `false` | no |
