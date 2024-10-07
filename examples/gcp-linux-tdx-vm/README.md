@@ -8,7 +8,9 @@
 
 ## Intel GCP VM on default network
 
-This module creates a Linux VM on the default network.  Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
+This module creates a Intel Confiddential Compute Linux VM on the default network with Intel Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM with Confidential Computing and Intel Trust Domain Extension (Intel TDX) technology.  
+
+Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-Linux-VM"
 
 ## Usage
 
