@@ -13,7 +13,7 @@
 
 
 locals {
-  machine_type_regex = "^([cemn][123u])"
+  machine_type_regex = "^([cemn][1234u])"
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",

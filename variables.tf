@@ -102,13 +102,13 @@ variable "boot_image_family" {
 variable "boot_disk_size" {
   type        = number
   description = "Size of the OS disk"
-  default     = 100
+  default     = 500
 }
 
 variable "boot_disk_type" {
   type        = string
   description = "Disk type associated with the OS disk. Values can be either pd-ssd, local-ssd, or pd-standard"
-  default     = "pd-ssd"
+  default     = null
 }
 
 variable "boot_image_project" {
