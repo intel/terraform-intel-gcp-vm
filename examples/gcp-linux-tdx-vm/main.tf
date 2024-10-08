@@ -17,6 +17,8 @@ module "linux_vm" {
  enable_confidential_compute = var.enable_confidential_compute
  confidential_instance_type  = var.confidential_instance_type
  on_host_maintenance = "TERMINATE"
+ machine_type        =  "c3-standard-4"
+ 
 
  access_config = [{
     nat_ip                 = null
