@@ -19,8 +19,8 @@ locals {
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
     "c2": "Intel Cascade Lake"
-    "n4": "Intel Emerald Rapids"
-    "c4": "Intel Emerald Rapids 
+    "n4": null
+    "c4": null
     "n1": null
     "m1": null
     "m2": null
