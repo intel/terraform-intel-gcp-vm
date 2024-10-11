@@ -6,9 +6,9 @@
 
 © Copyright 2024, Intel Corporation
 
-## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Optimized Cloud Recipe for FastChat
+## GCP C4 5th Gen Xeon(code named Emerald Rapids) & Intel® Optimized Cloud Recipe for FastChat
 
-This demo will showcase Large Language Model(LLM) CPU inference using 4th Gen Xeon Scalable Processors on GCP.
+This demo will showcase Large Language Model(LLM) CPU inference using 5th Gen Xeon Scalable Processors on GCP.
 
 ## Usage
 

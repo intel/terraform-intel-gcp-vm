@@ -16,8 +16,7 @@ module "linux_vm" {
   boot_image_family   = "ubuntu-2204-lts"
   name                = "intel-diffusion-${random_id.rid.dec}"
   zone                = "us-central1-a"
-  machine_type        = "c3-standard-44"
-  #machine_type        = "n2-standard-32"
+  machine_type        = "c4-standard-32"
   allow_stopping_for_update = true	  
   tags                = ["diffusion-${random_id.rid.dec}"]
   user_data           = templatefile("./cloud_init.yml", {})
