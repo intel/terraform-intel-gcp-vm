@@ -22,7 +22,7 @@ module "linux_vm" {
   }, ]
 }
 
-#Required firewall rules
+Required firewall rules
 resource "google_compute_firewall" "rules" {
   project     = var.project
   name        = "ai-opea-codegen-${random_id.rid.dec}"

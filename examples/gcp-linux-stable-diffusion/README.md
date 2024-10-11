@@ -8,7 +8,7 @@
 
 ## GCP C3 4th Gen Xeon(code named Sapphire Rapids) & Intel® Optimized Cloud Recipe for Stable Diffusion
 
-This demo will showcase Stable Diffusion CPU inferencing using 4th Gen Xeon Scalable Processors on GCP.
+This demo will showcase Stable Diffusion CPU inferencing using 5th Gen Xeon Scalable Processors on GCP.
 
 ## Usage
 
