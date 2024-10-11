@@ -8,7 +8,7 @@
 
 ## Intel Red Hat Enterprise Linux GCP VM Example
 
-This module creates a Red Hat Enterprise Linux (RHEL) VM on the Intel 5th Gen Emerald Rapids CPU. The virtual machine is created on an Intel Sapphire Rapids c3-standard-4 by default.
+This module creates a Red Hat Enterprise Linux (RHEL) VM. The virtual machine is created on an Intel 5th Gen Xeon Scalable Processors (Emerald Rapids) on c4-standard-4 by default VM.
 
 Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-RHEL-VM".
 
