@@ -6,7 +6,7 @@
 #                    | | | | | ||  __/ |
 #                    |_|_| |_|\__\___|_|
 # --------------------------------------------------------
-# Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
+# Provision GCP Xeon 5th Generation Scalable processors (code-named Emerald Rapids) VM
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 module "spot_vm" {
   source                    = "intel/gcp-vm/intel"
