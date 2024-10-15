@@ -1,19 +1,26 @@
 
-# In this block the code determines the minimum CPU platform based on the machine type that the use has selected. We always recommend our customers to use the 
-# latest generation of Intel CPU platforms that are publicly available . As of the date of this repo, General Purpose N2 instances can be on either Ice Lake 
-# or Cascade Lake for the same price. For better price and performance, we are recommendaing to use Intel Ice Lake for N2 instances. For C3 instances, the 
-# minimum CPU platform is Intel Sapphire Rapids. As of the date of this repo, the C3 instances are in public preview. For M3 instances, the minimum CPU platform
-# is Intel Ice Lake. For C2 instances, the minimum CPU platform is Intel Cascade Lake. For the other instance types that are available on older generation 
-# Intel CPU, we are not populating the min CPU platform. We are using the default CPU platform that GCP will provide for these older generation of instances
+# In this block the code determines the minimum CPU platform based on the machine type that the use has selected. 
+# We always recommend our customers to use the latest generation of Intel CPU platforms that are publicly available . 
+# 
+# As of October 2024, C4 and N4 are powered by the 5th generation Intel Xeon Scalable processor (code-named Emerald Rapids) and will offer better performance over the C3 and N2 instances.
+# 
+# General Purpose N2 instances can be on either Ice Lake or Cascade Lake for the same price. For better price and performance, we are recommendaing to use Intel Ice Lake for N2 instances. For C3 instances, the 
+# minimum CPU platform is Intel Sapphire Rapids. 
+# 
+# The C3 instances are Sapphire Rapids and will have even better performance over the C2 instances. For M3 instances, the minimum CPU platform is Intel Ice Lake. 
+# For C2 instances, the minimum CPU platform is Intel Cascade Lake. For the other instance types that are available on older generation Intel CPUs, we are not populating the min CPU platform. 
+# We are using the default CPU platform that GCP will provide for these older generation of instances
+
 
 locals {
-  machine_type_regex = "^([cemn][123u])"
+  machine_type_regex = "^([cemn][1234u])"
   machine_types = {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
     "c2": "Intel Cascade Lake"
-    "n1": null
+    "n4": null
+    "c4": null
     "m1": null
     "m2": null
     "e2": null
@@ -55,6 +62,12 @@ resource "google_compute_instance" "instance" {
     }
   }
 
+ #Required for optional Intel Confidential Compute with TDX
+confidential_instance_config {
+    enable_confidential_compute = var.enable_confidential_compute
+    confidential_instance_type  = var.confidential_instance_type
+  }
+ 
   # Networking
   can_ip_forward = var.can_ip_forward
   network_interface {

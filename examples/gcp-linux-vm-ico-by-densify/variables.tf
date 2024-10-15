@@ -15,7 +15,7 @@ variable "densify_recommendations" {
   default = { 
     ico-test = {
       currentType = "n1-standard-2"
-      recommendedType = "c3-standard-4"
+      recommendedType = "c4-standard-4"
       approvalType = "all"
       savingsEstimate = "26.6"
       predictedUptime = "94.32"
@@ -30,7 +30,7 @@ variable "densify_fallback"{
   type = map(string)
   default = {
 	currentType = "n1-standard-2"
-	recommendedType = "c3-standard-4"
+	recommendedType = "c4-standard-4"
   approvalType = "all"
 	savingsEstimate = "0"
 	predictedUptime = "0"

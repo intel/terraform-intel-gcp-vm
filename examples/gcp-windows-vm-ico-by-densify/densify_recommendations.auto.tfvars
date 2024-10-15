@@ -1,7 +1,7 @@
 densify_recommendations = {
   "ico-test" = {
     currentType = "n1-standard-2"
-    recommendedType = "c3-standard-4"
+    recommendedType = "c4-standard-4"
     approvalType = "all"
     predictedUptime = "95.0"
     recommendationType = "Modernize"

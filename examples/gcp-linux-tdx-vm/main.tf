@@ -6,14 +6,21 @@
 #                    | | | | | ||  __/ |
 #                    |_|_| |_|\__\___|_|
 # --------------------------------------------------------
-# Provision GCP Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM
+# Provision GCP virtual machine on Intel Xeon 4th Generation Scalable processors (code-named Sapphire Rapids) VM which supports Confidential Computing with Intel Trust Domain Extension (Intel TDX) technology
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 module "linux_vm" {
   source              = "intel/gcp-vm/intel"
-  project             = var.project
-  boot_image_family   = "ubuntu-2204-lts"
-  name                = "emr-vm-20"
-  access_config = [{
+    project             = var.project
+    name                = "intel-tdx-linux01"
+ 
+ #required for Intel Confidential Compute VM with TDX
+ enable_confidential_compute = var.enable_confidential_compute
+ confidential_instance_type  = var.confidential_instance_type
+ on_host_maintenance = "TERMINATE"
+ machine_type        =  "c4-standard-4"
+ 
+
+ access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
     network_tier           = "PREMIUM"
