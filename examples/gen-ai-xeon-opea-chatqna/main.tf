@@ -14,7 +14,7 @@ module "linux_vm" {
   machine_type              = "c4-highcpu-48"
   allow_stopping_for_update = true
   tags                      = ["ai-opea-chatqna-${random_id.rid.dec}"]
-  user_data = templatefile("./cloud_init.yml", { HUGGINGFACEHUB_API_TOKEN = var.huggingface_token })
+  user_data                 = templatefile("./cloud_init.yml", { HUGGINGFACEHUB_API_TOKEN = var.huggingface_token })
   access_config = [{
     nat_ip                 = null
     public_ptr_domain_name = null
@@ -31,7 +31,7 @@ resource "google_compute_firewall" "rules" {
 
   allow {
     protocol = "tcp"
-    ports    = ["22","80", "443", "6379", "8001", "6006", "6007", "6000", "7000", "8808", "8000", "8888", "5173", "5174", "9009", "9000"]
+    ports    = ["80", "443", "6379", "8001", "6006", "6007", "6000", "7000", "8808", "8000", "8888", "5173", "5174", "9009", "9000"]
   }
   source_ranges = ["0.0.0.0/0"]
   target_tags   = ["ai-opea-chatqna-${random_id.rid.dec}"]
