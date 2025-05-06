@@ -247,7 +247,4 @@ No modules.
 | <a name="output_private_ip"></a> [private\_ip](#output\_private\_ip) | Internal IP address of the instance |
 | <a name="output_public_ip"></a> [public\_ip](#output\_public\_ip) | Public IP address of the instance |
 | <a name="output_self_link"></a> [self\_link](#output\_self\_link) | The URI of the created resource |
-
-## Links
-<https://cloud.google.com/compute/docs/cpu-platforms>
 <!-- END_TF_DOCS -->
