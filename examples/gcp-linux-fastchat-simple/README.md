@@ -4,7 +4,7 @@
 
 # Intel Optimized Cloud Modules for Terraform
 
-© Copyright 2024, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## GCP C4 5th Gen Xeon(code named Emerald Rapids) & Intel® Optimized Cloud Recipe for FastChat
 
