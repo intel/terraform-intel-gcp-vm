@@ -4,7 +4,7 @@
 
 # Intel® Optimized Cloud Modules for Terraform
 
-© Copyright 2024, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## GCP C4 Instance with 5th Generation Intel® Xeon® Scalable Processor (Emerald Rapids) & Open Platform for Enterprise AI (OPEA) Code Generation Example
 
