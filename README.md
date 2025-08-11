@@ -8,8 +8,12 @@
 
 ## GCP VM module
 This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.
+ 
 
 ## Performance Data
+#### Intel Xeon 6 (Granite Rapids) now available on C4 VMs. These C4 instances can power even more demanding workloads, delivering the highest frequency of any Google Compute Engine VM — up to 4.2 GHz, the most vCPU and RAM of any Intel-based comparable product, larger L3 cache size, and 1.35x higher maximum memory bandwidth.
+
+#### As of August 2025, the expanded C4 machine series with Intel Xeon 6 is available in 19 zones, with more expansion to come. Check the latest regional availability on our regions and zones page (https://cloud.google.com/compute/docs/regions-zones). Experience the leading performance, predictability, and control that C4 VMs deliver today! To learn more about C4 and its new capabilities, visit the C4 documentation. 
 
 #### Find all the information below plus even more by navigating our full library
 #### [INTEL CLOUD PERFROMANCE DATA LIBRARY for GCP](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
