@@ -18,12 +18,12 @@ locals {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
-    "c2": "Intel Cascade Lake"
-    "n4": "Intel Emerald Rapids"
-    "c4": "Intel Granite Rapids"
-    "m1": null
-    "m2": null
-    "e2": null
+    "c2": "Intel Cascade Lake",
+    "n4": "Intel Emerald Rapids",
+    "c4": "Intel Granite Rapids",
+    "m1": null,
+    "m2": null,
+    "e2": null,
     "cu": null
   }
   min_cpu_platform = lookup(local.machine_types,one(regex(local.machine_type_regex, var.machine_type)),null)

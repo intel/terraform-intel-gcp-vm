@@ -18,10 +18,13 @@ This module provides the functionality to ensure that you are utilizing Intel's 
 #### Find all the information below plus even more by navigating our full library
 #### [INTEL CLOUD PERFROMANCE DATA LIBRARY for GCP](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
 
+![alt text](image.png)
+
 #
 <center>
 
 #### [Maximize performance and optimize spend with Compute Engine’s latest VMs, N4 and C4](https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series)
+
 
 <p align="center">
   <a href="https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series">
