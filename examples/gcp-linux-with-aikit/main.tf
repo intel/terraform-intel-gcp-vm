@@ -8,6 +8,7 @@ data "template_file" "user_data" {
   template = file("./cloud_init.yml")
 }
 
+
 module "linux_vm" {
   source              = "intel/gcp-vm/intel"
   project             = var.project
