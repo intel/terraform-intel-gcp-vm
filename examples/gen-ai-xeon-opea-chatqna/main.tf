@@ -3,15 +3,23 @@ resource "random_id" "rid" {
   byte_length = 3
 }
 
+provider "google" {
+  credentials = file("/home/mihikanerurkar/code/intel-csa-resource-gcp.json")
+  project     = "intel-csa-resource-gcp"
+  region      = "us-central1"
+  zone    = "us-central1-b"
+}
+
 #GCP Linux VM with Intel OPEA ChatQnA 
 module "linux_vm" {
-  source                    = "intel/gcp-vm/intel"
+  #source                    = "intel/gcp-vm/intel"
+  source                    = "../.."
   project                   = var.project
   boot_image_project        = "ubuntu-os-cloud"
   boot_image_family         = "ubuntu-2204-lts"
   name                      = "ai-opea-chatqna-${random_id.rid.dec}"
   zone                      = "us-east4-a"
-  machine_type              = "c4-highcpu-48"
+  machine_type              = "c4-standard-4-lssd"
   allow_stopping_for_update = true
   tags                      = ["ai-opea-chatqna-${random_id.rid.dec}"]
   user_data                 = templatefile("./cloud_init.yml", { HUGGINGFACEHUB_API_TOKEN = var.huggingface_token })
