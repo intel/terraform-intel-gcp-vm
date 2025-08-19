@@ -10,8 +10,7 @@
 # You will need to provide value of the variable project, which is your GCP project id when you do terraform apply
 # As of August 2025 only C3 instances will support Intel TDX
 module "linux_vm" {
-  #source              = "intel/gcp-vm/intel"
-  source              = "../.."
+  source              = "intel/gcp-vm/intel"
     project             = var.project
     name                = "intel-tdx-linux01"
  
