@@ -4,11 +4,11 @@
 
 # Intel Optimized Cloud Modules for Terraform
 
-© Copyright 2024, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Intel Red Hat Enterprise Linux GCP VM Example
 
-This module creates a Red Hat Enterprise Linux (RHEL) VM. The virtual machine is created on an Intel 5th Gen Xeon Scalable Processors (Emerald Rapids) on c4-standard-4 by default VM.
+This module creates a Red Hat Enterprise Linux (RHEL) VM. The virtual machine is created on an Intel 6th Gen Xeon Scalable Processors (Granite Rapids) on c4-standard-4-lssd by default VM.
 
 Update the project with a your project id in GCP. It is located on the variables.tf file under this example folder for "GCP-RHEL-VM".
 
