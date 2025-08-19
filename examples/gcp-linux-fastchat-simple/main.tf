@@ -7,11 +7,9 @@ variable "project" {
   description = "GCP Project ID"
 }
 
-
 #GCP Linux VM with Intel Cloud Optimized Recipe for FastChat
 module "linux_vm" {
-  #source              = "intel/gcp-vm/intel"
-  source              = "../.."
+  source              = "intel/gcp-vm/intel"
   project             = var.project
   boot_image_project  = "ubuntu-os-cloud"
   boot_image_family   = "ubuntu-2204-lts"
