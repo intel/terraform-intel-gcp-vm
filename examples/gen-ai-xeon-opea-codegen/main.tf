@@ -11,7 +11,7 @@ module "linux_vm" {
   boot_image_family         = "ubuntu-2204-lts"
   name                      = "ai-opea-codegen-${random_id.rid.dec}"
   zone                      = "us-east4-a"
-  machine_type              = "c4-highcpu-48"
+  machine_type              = "c4-standard-4-lssd"
   allow_stopping_for_update = true
   tags                      = ["ai-opea-codegen-${random_id.rid.dec}"]
   user_data                 = templatefile("./cloud_init.yml", { HUGGINGFACEHUB_API_TOKEN = var.huggingface_token })
@@ -22,7 +22,7 @@ module "linux_vm" {
   }, ]
 }
 
-Required firewall rules
+#Required firewall rules
 resource "google_compute_firewall" "rules" {
   project     = var.project
   name        = "ai-opea-codegen-${random_id.rid.dec}"
