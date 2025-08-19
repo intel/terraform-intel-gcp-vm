@@ -4,7 +4,7 @@
 
 ## Intel Optimized Cloud Modules for Terraform
 
-© Copyright 2024, Intel Corporation
+© Copyright 2025, Intel Corporation
 
 ## Intel GCP Windows VM on default network using Intel Cloud Optimzier(ICO) by Densify recommendations
  
@@ -46,7 +46,7 @@ variable "densify_recommendations" {
   default = { 
     ico-test = {
       currentType = "n1-standard-2"
-      recommendedType = "c4-standard-4"
+      recommendedType = "c4-standard-4-lssd"
       approvalType = "all"
       savingsEstimate = "26.6"
       predictedUptime = "94.32"
@@ -61,7 +61,7 @@ variable "densify_fallback"{
   type = map(string)
   default = {
 	currentType = "n1-standard-2"
-	recommendedType = "c4-standard-4"
+	recommendedType = "c4-standard-4-lssd"
   approvalType = "all"
 	savingsEstimate = "0"
 	predictedUptime = "0"
