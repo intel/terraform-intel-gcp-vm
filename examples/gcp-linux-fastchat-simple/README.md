@@ -8,7 +8,7 @@
 
 ## GCP C4 6th Gen Xeon(code named Granite Rapids) & Intel® Optimized Cloud Recipe for FastChat
 
-This demo will showcase Large Language Model(LLM) CPU inference using 5th Gen Xeon Scalable Processors on GCP.
+This demo will showcase Large Language Model(LLM) CPU inference using 6th Gen Xeon Scalable Processors on GCP.
 
 ## Usage
 
