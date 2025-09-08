@@ -2,8 +2,8 @@
 # In this block the code determines the minimum CPU platform based on the machine type that the use has selected. 
 # We always recommend our customers to use the latest generation of Intel CPU platforms that are publicly available . 
 # 
-# As of October 2024, C4 and N4 are powered by the 5th generation Intel Xeon Scalable processor (code-named Emerald Rapids) and will offer better performance over the C3 and N2 instances.
-# 
+# As of October 2024, N4 are powered by the 5th generation Intel Xeon Scalable processor (code-named Emerald Rapids) and will offer better performance over the C3 and N2 instances.
+# As of August 2025, C4 are powered by the 6th generation Intel Xeon Scalable processor (code-named Granite Rapids).
 # General Purpose N2 instances can be on either Ice Lake or Cascade Lake for the same price. For better price and performance, we are recommendaing to use Intel Ice Lake for N2 instances. For C3 instances, the 
 # minimum CPU platform is Intel Sapphire Rapids. 
 # 
@@ -18,12 +18,12 @@ locals {
     "n2": "Intel Ice Lake",
     "c3": "Intel Sapphire Rapids",
     "m3": "Intel Ice Lake",
-    "c2": "Intel Cascade Lake"
-    "n4": null
-    "c4": null
-    "m1": null
-    "m2": null
-    "e2": null
+    "c2": "Intel Cascade Lake",
+    "n4": "Intel Emerald Rapids",
+    "c4": "Intel Granite Rapids",
+    "m1": null,
+    "m2": null,
+    "e2": null,
     "cu": null
   }
   min_cpu_platform = lookup(local.machine_types,one(regex(local.machine_type_regex, var.machine_type)),null)

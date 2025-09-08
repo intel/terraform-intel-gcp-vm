@@ -6,9 +6,9 @@
 
 © Copyright 2025, Intel Corporation
 
-## GCP C4 Instance with 5th Generation Intel® Xeon® Scalable Processor (Emerald Rapids) & Open Platform for Enterprise AI (OPEA) ChatQnA Example
+## GCP C4 Instance with 6th Generation Intel® Xeon® Scalable Processor (Granite Rapids) & Open Platform for Enterprise AI (OPEA) ChatQnA Example
 
-This demo will showcase Retrieval Augmented Generation (RAG) CPU inference using 5th Gen Xeon Scalable Processors on GCP using the OPEA ChatQnA Example. For more information about OPEA, go [here](https://opea.dev/). For more information on this specific example, go [here](https://github.com/opea-project/GenAIExamples/tree/main/ChatQnA).
+This demo will showcase Retrieval Augmented Generation (RAG) CPU inference using 6th Gen Xeon Scalable Processors on GCP using the OPEA ChatQnA Example. For more information about OPEA, go [here](https://opea.dev/). For more information on this specific example, go [here](https://github.com/opea-project/GenAIExamples/tree/main/ChatQnA).
 
 ## Usage
 

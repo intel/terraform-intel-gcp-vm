@@ -1,7 +1,7 @@
 ########################
 ####     Intel      ####
 ########################
-# See policies.md, Intel recommends the 5th Generation Intel® Xeon® Platinum (Emerald Rapids) based instances. It is the latest Intel CPU generation globally available
+# See policies.md, Intel recommends the 6th Generation Intel® Xeon® Platinum (Granite Rapids) based instances. It is the latest Intel CPU generation globally available
 # at the time of creation of this repo
 #General Purpose: n4-Standard:  n4-standard-2, n4-standard-4, n4-standard-8, n4-standard-16, n4-standard-32, n4-standard-48, n4-standard-64, n4-standard-80
 #General Purpose: n4-HighMem: n4-highmem-2, n4-highmem-4, n4-highmem-8, n4-highmem-16, n4-highmem-32, n4-highmem-48, n4-highmem-64, n4-highmem-80
@@ -18,7 +18,7 @@
 variable "machine_type" {
   type        = string
   description = "The machine type to create"
-  default     = "c4-standard-4"
+  default     = "c4-standard-4-lssd"
 }
 
 ########################

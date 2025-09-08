@@ -8,16 +8,25 @@
 
 ## GCP VM module
 This module provides the functionality to ensure that you are utilizing Intel's latest generation processor in the creation of a virtual machine in GCP.
+ 
 
 ## Performance Data
+#### Intel Xeon 6 (Granite Rapids) now available on C4 VMs. Other variants are using the Intel Xeon 5th generation (Emerald Rapids)These C4 instances can power even more demanding workloads, delivering the highest frequency of any Google Compute Engine VM — up to 4.2 GHz, the most vCPU and RAM of any Intel-based comparable product, larger L3 cache size, and 1.35x higher maximum memory bandwidth.
+
+#### As of August 2025, the expanded C4 machine series with Intel Xeon 6 is available in 19 zones, with more expansion to come. Check the latest regional availability on our regions and zones page (https://cloud.google.com/compute/docs/regions-zones). Experience the leading performance, predictability, and control that C4 VMs deliver today! To learn more about C4 and its new capabilities, visit the C4 documentation. 
+
+#### Intel Xeon 6 Instance are available using the C4-standard-X-lssd or C4-highmem-X-lssd instance types. C4-standard-X and C4-highmem-X are going to be using 5th Gen Intel Xeon (Emerald Rapids)
 
 #### Find all the information below plus even more by navigating our full library
 #### [INTEL CLOUD PERFROMANCE DATA LIBRARY for GCP](https://www.intel.com/content/www/us/en/developer/topic-technology/cloud/library.html?f:@stm_10381_en=%5BGoogle%20Alphabet%5D)
+
+![alt text](image.png)
 
 #
 <center>
 
 #### [Maximize performance and optimize spend with Compute Engine’s latest VMs, N4 and C4](https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series)
+
 
 <p align="center">
   <a href="https://cloud.google.com/blog/products/compute/a-closer-look-at-compute-engine-c4-and-n4-machine-series">
@@ -212,7 +221,7 @@ No modules.
 | <a name="input_enable_vtpm"></a> [enable\_vtpm](#input\_enable\_vtpm) | Use a virtualized trusted platform module, which is a specialized computer chip you can use to encrypt objects like keys and certificates. | `bool` | `true` | no |
 | <a name="input_hostname"></a> [hostname](#input\_hostname) | A custom hostname for the instance. Must be a fully qualified DNS name and RFC-1035-valid | `string` | `null` | no |
 | <a name="input_ipv6_access_config"></a> [ipv6\_access\_config](#input\_ipv6\_access\_config) | Access configurations, i.e. IPs via which this instance can be accessed via the Internet. Omit to ensure that the instance is not accessible from the Internet. If omitted, ssh provisioners will not work unless Terraform can send traffic to the instance's network. This can be represented as multiple maps | <pre>list(object({<br/>    public_ptr_domain_name = optional(string, null)<br/>    network_tier           = optional(string, null)<br/>  }))</pre> | `[]` | no |
-| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | The machine type to create | `string` | `"c4-standard-4"` | no |
+| <a name="input_machine_type"></a> [machine\_type](#input\_machine\_type) | The machine type to create | `string` | `"c4-standard-4-lssd"` | no |
 | <a name="input_name"></a> [name](#input\_name) | A unique name for the resource, required by GCE. Changing this forces a new resource to be created. | `string` | n/a | yes |
 | <a name="input_network"></a> [network](#input\_network) | The name or self\_link of the network to attach this interface to. | `string` | `"default"` | no |
 | <a name="input_network_ip"></a> [network\_ip](#input\_network\_ip) | The private IP address to assign to the instance. If empty, the address will be automatically assigned. | `string` | `""` | no |
